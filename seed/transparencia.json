@@ -1,0 +1,1036 @@
+{
+  "parcerias": {
+    "1030": {
+      "ordem": 0,
+      "nome": "Projeto esportivo · Ministério do Esporte",
+      "num": "Termo de Fomento nº 1030/2026 · Transferegov 7AADBD/2026",
+      "tipo": "Fomento",
+      "esfera": "Federal",
+      "orgao": "Ministério do Esporte",
+      "area": "Esporte",
+      "ini": "2026-09-27",
+      "fim": "2028-02-27",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 290732.68,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "58.111-9",
+      "alerta": "",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1792517787096_Termo_de_Fomento_I_Ministerio_do_Esporte.pdf"
+        },
+        {
+          "nome": "Publicação no Diário Oficial da União",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1792518492757_Publica_o_D_O_U.pdf"
+        }
+      ],
+      "repasses": [],
+      "pc": []
+    },
+    "3380": {
+      "ordem": 1,
+      "nome": "Serviço de Convivência · Rede Básica · recurso municipal",
+      "num": "Termo de Colaboração nº 3.380/2024 · Processo 183.116/2024 · Edital 577/2024 · Chamamento Público 72/2024",
+      "tipo": "Colaboração",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "SCFV",
+      "ini": "2024-12-30",
+      "fim": "2025-12-29",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 2414956.31,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "42.403-X",
+      "alerta": "No site atual, o valor programado aparece como R$ 241.495.631,00, 100 vezes maior que o valor da lista.",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de colaboração",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320659501_TERMO_3_380-2024.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-05-28",
+          "valor": 201246.36,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773873481215_EXTRATO_BANCARIO_CC_42_403-X_JAN_I_ABR_2025.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773873490401_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_380_2024.pdf"
+        }
+      ],
+      "pc": []
+    },
+    "3378": {
+      "ordem": 2,
+      "nome": "Serviço de Convivência · Rede Básica · recurso estadual",
+      "num": "Termo de Colaboração nº 3.378/2024 · Processo 183.116/2024 · Edital 577/2024 · Chamamento Público 72/2024",
+      "tipo": "Colaboração",
+      "esfera": "Estadual",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "SCFV",
+      "ini": "2024-12-30",
+      "fim": "2025-12-29",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 69120,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "51.107-2",
+      "alerta": "",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de colaboração",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320663854_TERMO_3_378-2024.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-05-27",
+          "valor": 5760,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773874945318_EXTRATO_BANCARIO_CC_51_107-2_JAN_I_ABR_2025.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773874945483_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_378_2024.pdf"
+        }
+      ],
+      "pc": []
+    },
+    "3379": {
+      "ordem": 3,
+      "nome": "Serviço de Convivência · Rede Básica · recurso federal",
+      "num": "Termo de Colaboração nº 3.379/2024 · Processo 183.116/2024 · Edital 577/2024 · Chamamento Público 72/2024",
+      "tipo": "Colaboração",
+      "esfera": "Federal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "SCFV",
+      "ini": "2024-12-29",
+      "fim": "2025-12-28",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 66975,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "51.108-0",
+      "alerta": "No site atual, o valor programado aparece como R$ 22.325,00, e o arquivo de prestação de contas é o demonstrativo de outro termo (3.316/2024).",
+      "pcStatus": "Apresentada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de colaboração",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320661740_TERMO_3_379-2024.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-05-27",
+          "valor": 5581.25,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773872966045_EXTRATO_BANCARIO_CC_51_108-0_JAN_I_ABR_2025.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773872967437_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_379_2024.pdf"
+        }
+      ],
+      "pc": [
+        {
+          "ano": "2024",
+          "desc": "Relatório 1",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773873185085_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_316_2024.pdf"
+        }
+      ]
+    },
+    "3484": {
+      "ordem": 4,
+      "nome": "Serviço de Convivência · emenda parlamentar federal",
+      "num": "Termo de Colaboração nº 3.484/2025 · Processo 58.245/2024 · Emenda da deputada Adriana Ventura",
+      "tipo": "Colaboração",
+      "esfera": "Federal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "SCFV",
+      "ini": "2025-05-02",
+      "fim": "2026-05-28",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 166890,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "51.582-5",
+      "alerta": "",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de colaboração",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320638807_Termo_3_484_2025.pdf"
+        }
+      ],
+      "repasses": [],
+      "pc": []
+    },
+    "3153": {
+      "ordem": 5,
+      "nome": "Serviço de Convivência · Unidade Wise New",
+      "num": "Termo de Fomento nº 3.153/2024 · Processo 17.354/2024 · Emenda do vereador Junior Rodrigues · Custeio",
+      "tipo": "Fomento",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "SCFV",
+      "ini": "2024-08-07",
+      "fim": "2025-08-07",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 100000,
+      "contaBanco": "",
+      "contaAgencia": "",
+      "conta": "",
+      "alerta": "",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320649417_Termo_de_Fomento_n_3153-2024_I_Emenda_Impositiva_Municipal_I_Vereador_Junior_Rodrigues.pdf"
+        }
+      ],
+      "repasses": [],
+      "pc": []
+    },
+    "3152": {
+      "ordem": 6,
+      "nome": "Serviço de Convivência · Unidade Wise Life",
+      "num": "Termo de Fomento nº 3.152/2024 · Emenda Impositiva 27.811.014.2.076 · Processo 17.418/2024 · Vereador Berriel · Auxílio",
+      "tipo": "Fomento",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "SCFV",
+      "ini": "2024-08-31",
+      "fim": "2025-08-29",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 50000,
+      "contaBanco": "",
+      "contaAgencia": "",
+      "conta": "",
+      "alerta": "",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320651362_Termo_de_Fomento_n_3152-2024_I_Emenda_Impositiva_Municipal_I_Vereador_Berriel.pdf"
+        }
+      ],
+      "repasses": [],
+      "pc": []
+    },
+    "3316": {
+      "ordem": 7,
+      "nome": "Acolhimento · Rede Especial · recurso municipal",
+      "num": "Termo de Colaboração nº 3.316/2024 · Processo 183.270/2024 · Edital 577/2024 · Chamamento Público 72/2024",
+      "tipo": "Colaboração",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Acolhimento",
+      "ini": "2024-12-30",
+      "fim": "2025-12-29",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 173318040,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "50.984-1",
+      "alerta": "O valor de R$ 173.318.040,00 publicado no site atual é provavelmente um erro de vírgula: 12 parcelas de R$ 144.431,70 somam R$ 1.733.180,40.",
+      "pcStatus": "Apresentada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Edital 577/2024",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320669784_1_1_EDITAL_577_do_20241003_3898.pdf"
+        },
+        {
+          "nome": "Homologação do chamamento público",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320670492_1_2_HOMOLOGA_O_FINAL_CHAMAMENTO_P_BLICO_2025.pdf"
+        },
+        {
+          "nome": "Termo de colaboração",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320671286_TERMO_3_316-2024.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-05-27",
+          "valor": 144431.7,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773872531560_EXTRATO_BANCARIO_CC_50_984-1_JAN_I_ABR_2025.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773872541589_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_316_2024.pdf"
+        }
+      ],
+      "pc": [
+        {
+          "ano": "2026",
+          "desc": "Demonstrativo de receitas e despesas",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773872541589_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_316_2024.pdf"
+        }
+      ]
+    },
+    "3317": {
+      "ordem": 8,
+      "nome": "Acolhimento · Rede Especial · recurso estadual",
+      "num": "Termo de Colaboração nº 3.317/2024 · Processo 183.270/2024 · Edital 577/2024 · Chamamento Público 72/2024",
+      "tipo": "Colaboração",
+      "esfera": "Estadual",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Acolhimento",
+      "ini": "2024-12-30",
+      "fim": "2025-12-29",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 86221.2,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "51.104-8",
+      "alerta": "No site atual, o valor programado aparece como R$ 8.622.120,00 e a parcela como R$ 718.510,00. Pelo total, a parcela mensal seria R$ 7.185,10.",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de colaboração",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320667787_TERMO_3_317-2024.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-01-01",
+          "valor": 718510,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773873777691_EXTRATO_BANCARIO_CC_51_104-8_JAN_I_ABR_2025.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773873777890_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_317_2024.pdf"
+        }
+      ],
+      "pc": []
+    },
+    "3318": {
+      "ordem": 9,
+      "nome": "Acolhimento · Rede Especial · recurso federal",
+      "num": "Termo de Colaboração nº 3.318/2024 · Processo 183.270/2024 · Edital 577/2024 · Chamamento Público 72/2024",
+      "tipo": "Colaboração",
+      "esfera": "Federal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Acolhimento",
+      "ini": "2024-12-30",
+      "fim": "2025-12-29",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 144000,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "51.105-6",
+      "alerta": "",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de colaboração",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320665719_Termo_3_318_-_2024.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-05-28",
+          "valor": 12000,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773874504550_EXTRATO_BANCARIO_CC_51_105-6-X_JAN_I_ABR_2025.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773874504785_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_318_2024.pdf"
+        }
+      ],
+      "pc": []
+    },
+    "2966": {
+      "ordem": 10,
+      "nome": "Acolhimento · emenda parlamentar federal",
+      "num": "Termo de Colaboração nº 2.966/2023 · Processo 51404/2023 · Emenda do deputado Rodrigo Agostinho",
+      "tipo": "Colaboração",
+      "esfera": "Federal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Acolhimento",
+      "ini": "2023-12-19",
+      "fim": "2024-12-19",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 100000,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "41.035-7",
+      "alerta": "",
+      "pcStatus": "Apresentada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de colaboração",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320644138_Termo_de_Colabora_o_2_966-2023_Emenda_Parlamentar_Federal_I_Servi_o_de_Acolhimento_em_Abrigo_para_Crian_as_e_Adolescentes.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2023-11-30",
+          "valor": 100000,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773876996347_EXTRATO_BANCARIO_CC_41_035-7_DEZ_2023_E_JAN_I_DEZ_2024.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773877005901_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_2_966_2023.pdf"
+        }
+      ],
+      "pc": [
+        {
+          "ano": "2023",
+          "desc": "Demonstrativo de receitas e despesas",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773877005901_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_2_966_2023.pdf"
+        }
+      ]
+    },
+    "3459": {
+      "ordem": 11,
+      "nome": "Impactar com Arte · CMDCA",
+      "num": "Termo de Fomento nº 3.459/2025 · Processo 26834/2025 · Chamamento Público 416/CMDCA 2023",
+      "tipo": "Fomento",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Arte e cultura",
+      "ini": "2025-03-10",
+      "fim": "2026-03-10",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 86200,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "51.106-4",
+      "alerta": "O relatório publicado no site atual é um arquivo provisório (\"relatório em preparação\").",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320640563_Termo_de_fomento_3459-2025_-_Impactar_com_Artes.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-05-28",
+          "valor": 7188.33,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773871887597_EXTRATO_BANCARIO_CC_51_106-4_JAN_I_MAI_2025.pdf",
+          "relatorio": ""
+        }
+      ],
+      "pc": []
+    },
+    "3458": {
+      "ordem": 12,
+      "nome": "Capacitação FourC · CMDCA",
+      "num": "Termo de Fomento nº 3.458/2025 · Processo 26834/2025 · Chamamento Público 416/CMDCA 2023",
+      "tipo": "Fomento",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Qualificação",
+      "ini": "2025-03-10",
+      "fim": "2026-03-10",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 168936,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "41.035-7",
+      "alerta": "O relatório publicado no site atual é um arquivo provisório (\"relatório em preparação\").",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320642125_Termo_de_Fomento_3458-2025_-_Four_C_e_Wise_Madness.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-05-28",
+          "valor": 14078,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773872257082_EXTRATO_BANCARIO_CC_41_035-7_JAN_I_MAI_2025.pdf",
+          "relatorio": ""
+        }
+      ],
+      "pc": []
+    },
+    "condeca": {
+      "ordem": 13,
+      "nome": "Projeto Foco · Condeca",
+      "num": "Termo de Fomento · Processo 012.00004180/2024-91 · Chamamento Público 01/SEDS/Condeca/2021-2022 · Fundo Estadual dos Direitos da Criança e do Adolescente",
+      "tipo": "Fomento",
+      "esfera": "Estadual",
+      "orgao": "Secretaria de Desenvolvimento Social (SP)",
+      "area": "Qualificação",
+      "ini": "2024-07-21",
+      "fim": "2025-07-21",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 189300,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "41.349-6",
+      "alerta": "O relatório publicado no site atual é um arquivo provisório (\"relatório em preparação\").",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Resultado publicado no Diário Oficial",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320657220_DOE-30_07_24_-_FOCO_CONDECA.pdf"
+        },
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320657551_TERMO_FOCO_-_CONDECA.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2024-06-30",
+          "valor": 189300,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773876716383_EXTRATO_BANCARIO_CC_41_349-6_JUL_I_DEZ_2024_E_JAN_I_MAIO_2025.pdf",
+          "relatorio": ""
+        }
+      ],
+      "pc": []
+    },
+    "3163": {
+      "ordem": 14,
+      "nome": "Projeto Hóquei",
+      "num": "Termo de Fomento nº 3.163/2024 · Emenda Impositiva 27.811.014.2.076 · Processo 27.898/2024 · Vereador Berriel",
+      "tipo": "Fomento",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Esporte",
+      "ini": "2024-12-30",
+      "fim": "2025-12-30",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 50000,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "47.132-1",
+      "alerta": "",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320654860_Termo_de_Fomento_31632024_H_quei_I_Emenda_Impositiva_Municipal_I_Vereador_Beriel.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-05-28",
+          "valor": 4166.66,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773874200368_EXTRATO_BANCARIO_CC_47_132-1_JAN_I_ABR_2025.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773874201126_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_163_2024.pdf"
+        }
+      ],
+      "pc": []
+    },
+    "3165": {
+      "ordem": 15,
+      "nome": "Wise Brac Futebol Clube · auxílio",
+      "num": "Termo de Fomento nº 3.165/2024 · Processo 27.885/2024 · Emenda Impositiva 27.813.0014.2.075 · Vereador Miltinho Sardim",
+      "tipo": "Fomento",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Esporte",
+      "ini": "2024-08-31",
+      "fim": "2025-08-31",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 22703,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "41.348-8",
+      "alerta": "",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320647682_Termo_de_Fomento_n_3165-2024_I_Emenda_Impositiva_Municipal_I_Vereador_Miltinho_Sardim_I_Wise_Brac_Futebol_Club.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2024-09-01",
+          "valor": 22703,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773875758497_EXTRATO_BANCARIO_CC_41_348-8_SET_I_DEZ_2024.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773875773147_Futebol.pdf"
+        }
+      ],
+      "pc": []
+    },
+    "3164": {
+      "ordem": 16,
+      "nome": "Wise Brac Futebol Clube · custeio",
+      "num": "Termo de Fomento nº 3.164/2024 · Processo 27.885/2024 · Emenda Impositiva 27.813.0014.2.075 · Vereador Miltinho Sardim",
+      "tipo": "Fomento",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Esporte",
+      "ini": "2024-09-30",
+      "fim": "2025-08-31",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 27297,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "47.131-3",
+      "alerta": "",
+      "pcStatus": "Não publicada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320645928_Termo_de_Fomento_n_3164-2024_IEmenda_Impositiva_Municipal_I_Vereador_Miltinho_Sardim_I_Wise_Brac_Futebol_ClubI_Custeio.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2025-05-28",
+          "valor": 27297,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773875337592_EXTRATO_BANCARIO_CC_47_131-3_SET_I_DEZ_2024.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773875350823_Futebol.pdf"
+        }
+      ],
+      "pc": []
+    },
+    "3151": {
+      "ordem": 17,
+      "nome": "Energia fotovoltaica e veículo",
+      "num": "Termo de Fomento nº 3.151/2024 · Emenda Impositiva · Processo 17.371/2024 · Vereador Bira · Auxílio",
+      "tipo": "Fomento",
+      "esfera": "Municipal",
+      "orgao": "Prefeitura Municipal de Bauru",
+      "area": "Estrutura",
+      "ini": "2024-08-07",
+      "fim": "2024-12-29",
+      "assinatura": "",
+      "objeto": "",
+      "valor": 246000,
+      "contaBanco": "Banco do Brasil",
+      "contaAgencia": "3015-5",
+      "conta": "47.134-8",
+      "alerta": "",
+      "pcStatus": "Apresentada",
+      "pcPrevista": "",
+      "pcApresentada": "",
+      "pcResultado": "",
+      "docs": [
+        {
+          "nome": "Termo de fomento",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320653055_Termo_de_Fomento_n_3151-2024_I_Emenda_Impositiva_Municipal_I_Vereador_Bira.pdf"
+        }
+      ],
+      "repasses": [
+        {
+          "data": "2024-07-31",
+          "valor": 246000,
+          "extrato": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773876068643_EXTRATO_BANCARIO_CC_47_134-8_AGO_I_DEZ_2024.pdf",
+          "relatorio": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773876078294_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_151_2024.pdf"
+        }
+      ],
+      "pc": [
+        {
+          "ano": "2024",
+          "desc": "Demonstrativo de receitas e despesas",
+          "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773876226809_Demonstrativo_Receitas_-Despesas_I_Termo_de_Colabora_o_3_151_2024.pdf"
+        }
+      ]
+    }
+  },
+  "documentos": {
+    "doc-01": {
+      "cat": "Estatuto e atas",
+      "ano": 2026,
+      "nome": "Ata de eleição e posse da diretoria atual (4 de maio de 2026)",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1792183786799_13_-_Ata_12_Altera_o_04_de_maio_de_2026.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-02": {
+      "cat": "Estatuto e atas",
+      "ano": 2023,
+      "nome": "Estatuto social (5ª alteração, 31 de agosto de 2023)",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320713793_Estatuto_5_Altera_o_-_31_AGOSTO_2023-Site.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-03": {
+      "cat": "Estatuto e atas",
+      "ano": 2024,
+      "nome": "Manual do colaborador e código de conduta",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320708971_MANUAL_DO_COLABORADOR_vers_o_final.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-04": {
+      "cat": "Certidões",
+      "ano": 2026,
+      "nome": "Certidão de débitos federais e dívida ativa da União",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320713036_Certidao-13890668000101.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-05": {
+      "cat": "Certidões",
+      "ano": 2025,
+      "nome": "Certidão negativa de débitos trabalhistas (CNDT)",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320712449_Certida_042025_CNDT.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-06": {
+      "cat": "Certidões",
+      "ano": 2024,
+      "nome": "Certidão negativa de débitos municipais",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320710509_04-_Mobiliaria.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-07": {
+      "cat": "Certidões",
+      "ano": 2024,
+      "nome": "Certidão negativa de débitos estaduais",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320711197_CND_SP.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-08": {
+      "cat": "Certidões",
+      "ano": 2024,
+      "nome": "Certificado de regularidade do FGTS (CRF)",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320711853_Certidao_FGTS_042025.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-09": {
+      "cat": "Balanços e auditoria",
+      "ano": 2025,
+      "nome": "Parecer dos auditores independentes",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1786552454618_Caderno_dos_Auditores_Independentes_-_Wise_-_31_12_2025_Assinado.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-10": {
+      "cat": "Balanços e auditoria",
+      "ano": 2025,
+      "nome": "Balanço patrimonial",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1786475790406_BALANCOPATRIMONIAL_MODELO3_ANUAL_01_12_2025_Assinado_assinado.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-11": {
+      "cat": "Balanços e auditoria",
+      "ano": 2025,
+      "nome": "Notas explicativas às demonstrações financeiras",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1786552623978_2025-Dfs_Notas_Explicativas_Revisada_Assinado_assinado_assinado_assinado_assinado_281_29_assinado_assinado.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-12": {
+      "cat": "Balanços e auditoria",
+      "ano": 2025,
+      "nome": "Demonstração do resultado (DRE)",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1786553650072_RELATORIODRE_MODELO3_ANUAL_01_12_2025_Assinado_281_29_assinado_1.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-13": {
+      "cat": "Balanços e auditoria",
+      "ano": 2025,
+      "nome": "Balancete de verificação anual",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1786553131045_BALANCETEDEVERIFICACAO_ANUAL_01_12_2025_Assinado_assinado.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-14": {
+      "cat": "Balanços e auditoria",
+      "ano": 2023,
+      "nome": "Demonstrações financeiras e notas explicativas",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320697712_Demonstra_es_Financeiras_e_notas_explicativas_2023.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-15": {
+      "cat": "Balanços e auditoria",
+      "ano": 2022,
+      "nome": "Demonstrações financeiras e notas explicativas",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320698823_Demonstra_es_Financeiras_e_Notas_Explicativas_2022.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-16": {
+      "cat": "Balanços e auditoria",
+      "ano": 2021,
+      "nome": "Demonstrações financeiras e notas explicativas",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320699708_Demonstra_es_Financeiras_e_Notas_Explicativas_2021.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-17": {
+      "cat": "Balanços e auditoria",
+      "ano": 2020,
+      "nome": "Balanço patrimonial",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320700786_Balan_o_Patrtimonial_2020.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-18": {
+      "cat": "Balanços e auditoria",
+      "ano": 2019,
+      "nome": "Demonstrações financeiras e notas explicativas",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320701586_Demonstra_es_Financeiras_e_Notas_Explicativas_2019.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-19": {
+      "cat": "Balanços e auditoria",
+      "ano": 2018,
+      "nome": "Demonstrações financeiras e notas explicativas",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320702779_Demonstra_es_Financeiras_e_Notas_Explicativas_2018.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-20": {
+      "cat": "Balanços e auditoria",
+      "ano": 2017,
+      "nome": "Demonstrações financeiras e notas explicativas",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320703892_Demonstra_es_Financeiras_e_Notas_Explicativas_2017.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-21": {
+      "cat": "Balanços e auditoria",
+      "ano": 2016,
+      "nome": "Demonstrações financeiras e notas explicativas",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320704736_Demonstra_es_Financeiras_e_Notas_Explicativas_2016.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-22": {
+      "cat": "Relatórios de atividades",
+      "ano": 2025,
+      "nome": "Relatório anual de execução de atividades",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320676845_RELATO_RIO_2025.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-23": {
+      "cat": "Relatórios de atividades",
+      "ano": 2024,
+      "nome": "Relatório anual de execução de atividades",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320679383_RELAT_RIO_2024.pdf",
+      "validade": "",
+      "obs": ""
+    },
+    "doc-24": {
+      "cat": "Relatórios de atividades",
+      "ano": 2023,
+      "nome": "Relatório anual de execução de atividades",
+      "url": "https://storage.sitevero.com/cms-production/ed56bfa9-6eca-4a60-8be4-4f0eb861d98d/1773320681112_assinado_RELATORIO_DE_ATIVIDADES_2023.pdf",
+      "validade": "",
+      "obs": ""
+    }
+  },
+  "contas": {
+    "conta-1-1": {
+      "ordem": 0,
+      "grupo": "Doações e recursos próprios",
+      "uso": "Doações via PIX",
+      "agencia": "3507",
+      "conta": "577967573-9",
+      "banco": "Banco a confirmar"
+    },
+    "conta-1-2": {
+      "ordem": 1,
+      "grupo": "Doações e recursos próprios",
+      "uso": "Recebimentos",
+      "agencia": "6919-1",
+      "conta": "28.033-X",
+      "banco": "Banco a confirmar"
+    },
+    "conta-1-3": {
+      "ordem": 2,
+      "grupo": "Doações e recursos próprios",
+      "uso": "Pagamentos",
+      "agencia": "6919-1",
+      "conta": "34.969-0",
+      "banco": "Banco a confirmar"
+    },
+    "conta-1-4": {
+      "ordem": 3,
+      "grupo": "Doações e recursos próprios",
+      "uso": "Doações · pagamentos",
+      "agencia": "001",
+      "conta": "41.62174-2",
+      "banco": "Banco a confirmar"
+    },
+    "conta-2-1": {
+      "ordem": 10,
+      "grupo": "Lei Rouanet · Oficinas Culturais (Pronac 236853)",
+      "uso": "Depósitos",
+      "agencia": "3015-5",
+      "conta": "46.122-9",
+      "banco": "Banco do Brasil"
+    },
+    "conta-2-2": {
+      "ordem": 11,
+      "grupo": "Lei Rouanet · Oficinas Culturais (Pronac 236853)",
+      "uso": "Pagamentos",
+      "agencia": "3015-5",
+      "conta": "46.123-7",
+      "banco": "Banco do Brasil"
+    }
+  },
+  "dirigentes": {
+    "dir-1": {
+      "ordem": 0,
+      "nome": "Brenda da Silva Alves",
+      "cargo": "",
+      "mandatoIni": "2026-05-04",
+      "mandatoFim": ""
+    },
+    "dir-2": {
+      "ordem": 1,
+      "nome": "Anderson Ricardo Mariano",
+      "cargo": "",
+      "mandatoIni": "2026-05-04",
+      "mandatoFim": ""
+    },
+    "dir-3": {
+      "ordem": 2,
+      "nome": "Marcus Vinicius Fernandes",
+      "cargo": "",
+      "mandatoIni": "2026-05-04",
+      "mandatoFim": ""
+    }
+  },
+  "unidades": {
+    "un-i": {
+      "ordem": 0,
+      "codigo": "I",
+      "nome": "Wise Galpão",
+      "tipo": "Serviço de Convivência (0 a 15 anos)",
+      "end": "Rua Braz Lemos de Almeida, 2-45 · Vila Aviação B · 17047-630",
+      "protegido": false,
+      "tel": "(14) 99822-8920",
+      "email": "wisegalpao@wisemadness.com.br",
+      "hor": "7h30 às 16h30"
+    },
+    "un-ii": {
+      "ordem": 1,
+      "codigo": "II",
+      "nome": "Wise Rasi",
+      "tipo": "Serviço de Convivência (6 a 15 anos)",
+      "end": "Rua Augusto Moreno Munhoz, s/n · Octávio Rasi · 17039-210",
+      "protegido": false,
+      "tel": "(14) 99885-4718",
+      "email": "wiserasi@wisemadness.com.br",
+      "hor": "7h30 às 16h30"
+    },
+    "un-iii": {
+      "ordem": 2,
+      "codigo": "III",
+      "nome": "Wise Hope",
+      "tipo": "Acolhimento institucional",
+      "end": "",
+      "protegido": true,
+      "tel": "(14) 3243-2715",
+      "email": "wisehope@wisemadness.com.br",
+      "hor": "8h às 17h"
+    },
+    "un-iv": {
+      "ordem": 3,
+      "codigo": "IV",
+      "nome": "Wise Brac",
+      "tipo": "Serviço de Convivência (6 a 15 anos)",
+      "end": "Rua Antônia Fabiano, 4-65 · Parque Jaraguá · 17067-670",
+      "protegido": false,
+      "tel": "(14) 99843-4540",
+      "email": "wisebrac@wisemadness.com.br",
+      "hor": "7h30 às 16h30"
+    },
+    "un-v": {
+      "ordem": 4,
+      "codigo": "V",
+      "nome": "Wise New",
+      "tipo": "Serviço de Convivência (6 a 15 anos)",
+      "end": "Rua Sargento Joaquim Nunes Cabral, 2-50 · Nova Esperança · 17065-220",
+      "protegido": false,
+      "tel": "(14) 99834-7352",
+      "email": "wisenew@wisemadness.com.br",
+      "hor": "7h30 às 16h30"
+    },
+    "un-vi": {
+      "ordem": 5,
+      "codigo": "VI",
+      "nome": "Wise Generation",
+      "tipo": "Acolhimento institucional",
+      "end": "",
+      "protegido": true,
+      "tel": "(14) 99156-8459",
+      "email": "wisegeneration@wisemadness.com.br",
+      "hor": "8h às 17h"
+    },
+    "un-adm": {
+      "ordem": 6,
+      "codigo": "Adm",
+      "nome": "Administrativo",
+      "tipo": "RH, jurídico, prestação de contas, fiscal e coordenação",
+      "end": "Rua Treze de Maio, 15-26, sala A, 2º andar · 17014-450",
+      "protegido": false,
+      "tel": "(14) 3208-7400",
+      "email": "adm@wisemadness.com.br",
+      "hor": "8h às 17h"
+    }
+  },
+  "transp": {
+    "config": {
+      "intro": "Tudo o que a Wise recebe do poder público, como presta contas e quem responde pela organização, com os documentos originais.",
+      "financasNota": "Os totais de receitas e despesas de 2025 estão na Demonstração do Resultado (DRE) e no balancete. No site atual, essas tabelas aparecem com R$ 0,00 e precisam ser preenchidas.",
+      "nota": "Esta seção segue o art. 11 da Lei 13.019/2014 (Marco Regulatório das Organizações da Sociedade Civil).",
+      "atualizadoEm": "2026-10-20T17:59:00-03:00"
+    }
+  }
+}

@@ -1,22 +1,863 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wise Madness · Arte, cultura e acolhimento em Bauru</title>
+<meta name="description" content="Associação Wise Madness: arte, cultura, esporte e acolhimento para crianças e adolescentes de Bauru desde 2006.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cal+Sans&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#D5413F; --red-d:#B02C2A; --red-soft:#FBEAEA;
+  --ink:#1F2328; --ink-2:#3A414A; --muted:#5A626C;
+  --line:#E2E5E9; --soft:#F3F4F6; --paper:#FFFFFF;
+  --orange:#F2731F;
+  --display:'Cal Sans','Hanken Grotesk',system-ui,sans-serif;
+  --body:'Hanken Grotesk',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --wrap:1180px; --r:14px;
+  --patch: polygon(1.5% 9%,11% 2%,27% 6%,46% 0,63% 5%,81% 1%,98.5% 6%,97% 31%,100% 54%,97.5% 79%,99.5% 96%,83% 99%,61% 94%,41% 100%,22% 95%,2.5% 99%,0 76%,2.5% 51%,0 26%);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;font-family:var(--body);font-size:17px;line-height:1.6;color:var(--ink);background:var(--paper)}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08;letter-spacing:-.01em;margin:0}
+h1{font-size:clamp(2.4rem,5.6vw,4.6rem)}
+h2{font-size:clamp(1.9rem,3.6vw,2.9rem)}
+h3{font-size:1.35rem;line-height:1.2}
+p{margin:0 0 1em}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.lead{font-size:1.2rem;color:var(--ink-2);max-width:60ch}
+.muted{color:var(--muted)}
+.small{font-size:.92rem}
+main:focus{outline:none}
+:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:10px 16px;z-index:100;border-radius:8px}
+.skip:focus{left:8px}
 
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Site WiseMadness</title>
-      <meta name="description" content="This web application showcases a portfolio with an integrated logo and photo gallery, designed for professionals to display their work effectively." />
-      <meta name="robots" content="noindex, nofollow" />
-      <style>html, body { height: 100%; margin: 0; } #root { height: 100%; }</style>
-      
-    </head>
+/* faixa de protótipo */
+.proto{background:var(--ink);color:#D9DDE2;font-size:.85rem;padding:8px 0}
+.proto .wrap{display:flex;gap:12px;align-items:center;justify-content:space-between}
+.proto button{background:none;border:0;color:#fff;font:inherit;cursor:pointer;text-decoration:underline;padding:4px}
 
-    <body>
-      
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-      
-    </body>
-  </html>
-  
+/* cabeçalho */
+header.site{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);backdrop-filter:saturate(1.4) blur(8px);border-bottom:1px solid var(--line)}
+header.site .wrap{display:flex;align-items:center;gap:28px;height:76px}
+.brand img{height:42px;width:auto}
+nav.main{display:flex;gap:4px;margin-left:auto}
+nav.main a{text-decoration:none;font-weight:600;font-size:.98rem;padding:10px 12px;border-radius:10px;color:var(--ink-2)}
+nav.main a:hover{background:var(--soft);color:var(--ink)}
+nav.main a[aria-current="page"]{color:var(--red-d);box-shadow:inset 0 -3px 0 var(--red)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 1rem/1 var(--body);padding:15px 22px;border-radius:999px;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:background .15s,color .15s}
+.btn-red{background:var(--red-d);color:#fff}
+.btn-red:hover{background:#951f1d}
+.btn-ghost{border-color:currentColor;color:inherit;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-sm{padding:11px 16px;font-size:.95rem}
+.menu-btn{display:none;margin-left:auto;background:none;border:2px solid var(--line);border-radius:10px;padding:8px 12px;font:600 .95rem var(--body);cursor:pointer}
+@media (max-width:980px){
+  nav.main{display:none}
+  .menu-btn{display:inline-flex}
+  header.site .btn-red{padding:11px 16px;font-size:.95rem}
+  header.site .wrap{gap:12px}
+  body.nav-open nav.main{display:flex;position:fixed;inset:76px 0 0 0;background:#fff;flex-direction:column;padding:16px 24px;gap:0;z-index:39;overflow:auto}
+  body.nav-open nav.main a{font-size:1.3rem;padding:16px 4px;border-bottom:1px solid var(--line);border-radius:0;font-family:var(--display);font-weight:400}
+}
+@media (max-width:480px){.brand img{height:34px} header.site .btn-red{padding:10px 13px}}
+
+/* hero */
+.hero{position:relative;color:#fff;min-height:min(86vh,760px);display:flex;align-items:flex-end;overflow:hidden;background:var(--ink)}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(31,35,40,.88) 0%,rgba(31,35,40,.55) 45%,rgba(31,35,40,.05) 80%),linear-gradient(0deg,rgba(31,35,40,.7) 0%,rgba(31,35,40,0) 45%)}
+@media (max-width:700px){.hero::after{background:linear-gradient(0deg,rgba(31,35,40,.92) 0%,rgba(31,35,40,.6) 60%,rgba(31,35,40,.35) 100%)}.proto .long{display:none}}
+.hero .wrap{position:relative;z-index:1;padding-top:96px;padding-bottom:132px;width:100%}
+.hero h1{max-width:15ch}
+.hero .lead{color:#E9ECEF;margin:22px 0 30px;max-width:46ch}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap}
+.since{display:inline-block;background:#fff;color:var(--ink);font-weight:700;font-size:.95rem;padding:9px 18px;margin-bottom:22px;clip-path:var(--patch);transform:rotate(-1.5deg)}
+
+/* faixa de impacto: os "patches" das camisetas */
+.impact{background:var(--red);position:relative;padding:0 0 56px}
+.impact .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;transform:translateY(-62px);margin-bottom:-62px}
+.patch{background:#fff;clip-path:var(--patch);padding:30px 26px 26px;color:var(--ink)}
+.impact .patch:nth-child(odd){transform:rotate(-1.2deg)}
+.impact .patch:nth-child(even){transform:rotate(1deg) translateY(10px)}
+.patch b{display:block;font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,4vw,3.3rem);line-height:1;color:var(--red-d);margin-bottom:10px}
+.patch span{display:block;font-weight:600;line-height:1.35}
+.impact .note{color:#FFE3E1;font-size:.88rem;margin-top:30px}
+@media (max-width:860px){.impact .wrap{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.impact .wrap{gap:14px}.patch{padding:24px 18px 20px}}
+
+section.block{padding:96px 0}
+section.block.tight{padding:64px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+.sec-head p{margin:14px 0 0;max-width:56ch;color:var(--ink-2)}
+.link{font-weight:700;color:var(--red-d);text-decoration:none;border-bottom:2px solid currentColor;padding-bottom:2px}
+.link:hover{color:var(--ink)}
+
+/* serviços */
+.services{display:grid;grid-template-columns:1.25fr 1fr;gap:20px}
+.svc{position:relative;border-radius:var(--r);overflow:hidden;min-height:420px;display:flex;align-items:flex-end;text-decoration:none;color:#fff;background:var(--ink)}
+.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.svc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(31,35,40,.92) 0%,rgba(31,35,40,.15) 65%)}
+.svc .in{position:relative;z-index:1;padding:32px}
+.svc .in p{margin:10px 0 0;color:#E6E9EC;max-width:40ch}
+.svc.plain{background:var(--ink);background-image:radial-gradient(circle at 85% 15%,rgba(213,65,63,.55),transparent 55%)}
+.svc.plain::after{display:none}
+.svc .tag{display:inline-block;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.14);padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.svc:hover h3{text-decoration:underline;text-underline-offset:4px}
+@media (max-width:860px){.services{grid-template-columns:1fr}.svc{min-height:320px}}
+
+/* filtros */
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;font:600 .95rem var(--body);cursor:pointer;color:var(--ink-2)}
+.chip:hover{border-color:var(--ink-2)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+
+/* cards de projeto */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px}
+@media (max-width:900px){.grid3{grid-template-columns:1fr 1fr}}
+@media (max-width:580px){.grid3{grid-template-columns:1fr}}
+.card{text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.card .ph{aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;background:var(--soft);margin-bottom:16px}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover .ph img{transform:scale(1.03)}
+.card .area{font-size:.88rem;font-weight:700;color:var(--red-d)}
+.card h3{margin:4px 0 8px}
+.card p{color:var(--ink-2);margin:0}
+.card:hover h3{text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+
+/* transparência teaser */
+.dark{background:var(--ink);color:#fff}
+.dark .lead,.dark .sec-head p{color:#C9CED4}
+.trust{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:start}
+.facts{list-style:none;margin:0;padding:0;border-top:1px solid rgba(255,255,255,.18)}
+.facts li{display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid rgba(255,255,255,.18)}
+.facts b{font-family:var(--display);font-weight:400;font-size:2.4rem;line-height:1;color:#fff}
+.facts span{color:#D7DBE0}
+@media (max-width:860px){.trust{grid-template-columns:1fr;gap:32px}}
+
+/* parceiros */
+.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.logo{background:#fff;border:1px solid var(--line);border-radius:12px;height:96px;display:flex;align-items:center;justify-content:center;padding:16px}
+.logo img{max-height:100%;max-width:100%;object-fit:contain}
+
+/* participe */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{border-radius:var(--r);padding:40px;background:var(--soft)}
+.panel.red{background:var(--red);color:#fff}
+.panel.red p{color:#FFE7E5}
+.panel h2{font-size:2rem;margin-bottom:14px}
+@media (max-width:860px){.split{grid-template-columns:1fr}.panel{padding:28px}}
+
+/* rodapé */
+footer.site{background:var(--ink);color:#C9CED4;padding:64px 0 32px;font-size:.95rem}
+footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
+footer.site h4{color:#fff;font:600 1rem var(--body);margin:0 0 12px}
+footer.site ul{list-style:none;margin:0;padding:0}
+footer.site li{margin:6px 0}
+footer.site a{text-decoration:none}
+footer.site a:hover{color:#fff;text-decoration:underline}
+footer.site .badge{display:inline-block;background:#fff;border-radius:10px;padding:10px 14px;margin-bottom:18px}
+footer.site .badge img{height:34px}
+footer.site .legal{border-top:1px solid rgba(255,255,255,.14);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.86rem}
+@media (max-width:860px){footer.site .cols{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){footer.site .cols{grid-template-columns:1fr}}
+
+/* cabeçalho de página interna */
+.phead{background:var(--soft);padding:64px 0 48px;border-bottom:1px solid var(--line)}
+.phead.red{background:var(--red);color:#fff;border:0}
+.phead.red .lead{color:#FFE7E5}
+.phead.dark{background:var(--ink);color:#fff;border:0}
+.phead.dark .lead{color:#C9CED4}
+.crumb{font-size:.92rem;margin-bottom:18px}
+.crumb a{text-decoration:none;font-weight:600}
+.crumb a:hover{text-decoration:underline}
+.phead h1{font-size:clamp(2.2rem,4.6vw,3.6rem);max-width:20ch}
+.phead .lead{margin-top:16px}
+
+/* página de projeto/serviço */
+.cover{aspect-ratio:21/8;max-height:460px;width:100%;object-fit:cover}
+.factsrow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);margin:-44px 0 48px;background:#fff;position:relative}
+.factsrow div{padding:20px 22px;border-left:1px solid var(--line)}
+.factsrow div:first-child{border-left:0}
+.factsrow dt{font-size:.85rem;color:var(--muted);font-weight:600}
+.factsrow dd{margin:4px 0 0;font-weight:600;line-height:1.35}
+.factsrow.flat{margin-top:0}
+@media (max-width:760px){.factsrow{grid-template-columns:1fr 1fr}.factsrow div:nth-child(3){border-left:0}.factsrow div:nth-child(n+3){border-top:1px solid var(--line)}}
+.cols2{display:grid;grid-template-columns:1.6fr 1fr;gap:56px}
+@media (max-width:900px){.cols2{grid-template-columns:1fr;gap:32px}}
+.prose{max-width:66ch}
+.aside{border-left:3px solid var(--red);padding-left:22px}
+.aside h3{font-size:1.1rem;font-family:var(--body);font-weight:700;margin:0 0 10px}
+.aside ul{list-style:none;margin:0 0 28px;padding:0}
+.aside li{margin:8px 0}
+
+table.t{width:100%;border-collapse:collapse;font-size:.97rem}
+table.t th{text-align:left;font-weight:600;color:var(--muted);font-size:.86rem;padding:10px 12px;border-bottom:2px solid var(--ink)}
+table.t td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tscroll{overflow-x:auto}
+
+/* linha do tempo */
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--red);margin-left:8px}
+.tl li{position:relative;padding:0 0 26px 30px}
+.tl li::before{content:"";position:absolute;left:-8px;top:9px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--red)}
+.tl b{font-family:var(--display);font-weight:400;font-size:1.5rem;display:block;line-height:1.1}
+
+.values{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:0}
+.values li{background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:6px 16px;font-weight:600}
+
+/* transparência */
+.tlayout{display:grid;grid-template-columns:250px 1fr;gap:48px;padding:48px 24px 96px}
+.tnav{position:sticky;top:100px;align-self:start}
+.tnav a{display:block;text-decoration:none;padding:10px 14px;border-radius:10px;font-weight:600;color:var(--ink-2)}
+.tnav a:hover{background:var(--soft)}
+.tnav a[aria-current="page"]{background:var(--ink);color:#fff}
+.tnav .upd{font-size:.85rem;color:var(--muted);padding:16px 14px 0;border-top:1px solid var(--line);margin-top:12px}
+@media (max-width:900px){
+  .tlayout{grid-template-columns:1fr;gap:24px;padding-top:24px}
+  .tnav{position:static;display:flex;overflow-x:auto;gap:6px;padding-bottom:6px;margin:0 -24px;padding-left:24px;padding-right:24px}
+  .tnav a{white-space:nowrap;border:1.5px solid var(--line);border-radius:999px;padding:8px 14px}
+  .tnav .upd{display:none}
+}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:8px 0 40px}
+.kpi{border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.kpi b{font-family:var(--display);font-weight:400;font-size:2.4rem;line-height:1;display:block;margin-bottom:8px}
+.kpi span{color:var(--ink-2);font-size:.97rem;line-height:1.4;display:block}
+.kpi a{font-size:.92rem}
+@media (max-width:700px){.kpis{grid-template-columns:1fr 1fr}}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.q{display:block;text-decoration:none;border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;transition:border-color .15s}
+.q:hover{border-color:var(--ink)}
+.q h3{font-size:1.25rem;margin-bottom:6px}
+.q p{margin:0;color:var(--ink-2);font-size:.97rem}
+@media (max-width:700px){.qgrid{grid-template-columns:1fr}}
+
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:20px}
+.toolbar input,.toolbar select{font:inherit;font-size:.97rem;padding:10px 14px;border:1.5px solid var(--line);border-radius:10px;background:#fff}
+.toolbar input{flex:1;min-width:200px}
+.seg{display:inline-flex;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}
+.seg button{font:600 .92rem var(--body);background:#fff;border:0;padding:10px 14px;cursor:pointer;color:var(--ink-2);border-left:1.5px solid var(--line)}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.count{color:var(--muted);font-size:.92rem;margin:0 0 10px}
+
+.plist{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.plist li a{display:grid;grid-template-columns:1fr 180px 150px 170px;gap:16px;align-items:center;padding:18px 8px;border-bottom:1px solid var(--line);text-decoration:none}
+.plist li a:hover{background:var(--soft)}
+.plist .nm{font-weight:700;line-height:1.3}
+.plist .nm small{display:block;font-weight:400;color:var(--muted);font-size:.86rem;margin-top:3px}
+.plist .val{font-variant-numeric:tabular-nums;font-weight:600;text-align:right}
+.plist .vig{font-size:.93rem;color:var(--ink-2)}
+@media (max-width:900px){.plist li a{grid-template-columns:1fr auto;gap:6px 16px}.plist .vig{grid-column:1}.plist .st{grid-column:1/-1}}
+
+.pill{display:inline-block;font-size:.8rem;font-weight:700;padding:4px 10px;border-radius:999px;line-height:1.3;margin:2px 4px 2px 0;white-space:nowrap}
+.pill.ok{background:#E3F2E6;color:#1C5E2B}
+.pill.off{background:var(--soft);color:var(--ink-2)}
+.pill.warn{background:#FDF0DE;color:#8A4B06}
+.pill.red{background:var(--red-soft);color:var(--red-d)}
+
+.dl{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--line);border-radius:var(--r);margin:24px 0 32px}
+.dl div{padding:16px 20px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.dl div:nth-child(-n+3){border-top:0}
+.dl div:nth-child(3n+1){border-left:0}
+.dl dt{font-size:.85rem;color:var(--muted);font-weight:600}
+.dl dd{margin:3px 0 0;font-weight:600}
+@media (max-width:700px){.dl{grid-template-columns:1fr 1fr}.dl div{border-left:1px solid var(--line)!important;border-top:1px solid var(--line)!important}.dl div:nth-child(2n+1){border-left:0!important}.dl div:nth-child(-n+2){border-top:0!important}}
+.bar{height:10px;background:var(--soft);border-radius:99px;overflow:hidden;margin-top:8px}
+.bar i{display:block;height:100%;background:var(--ink)}
+.alert{background:#FDF0DE;border-left:4px solid #D98A1B;padding:16px 20px;border-radius:0 10px 10px 0;margin:0 0 28px;color:#5C3300}
+.alert b{display:block;margin-bottom:2px}
+h2.h{font-size:1.6rem;margin:40px 0 14px}
+
+.docs{list-style:none;margin:0;padding:0;border-top:2px solid var(--ink)}
+.docs li{display:grid;grid-template-columns:64px 1fr auto;gap:16px;align-items:center;padding:14px 4px;border-bottom:1px solid var(--line)}
+.docs .yr{font-family:var(--display);font-size:1.3rem}
+.docs .nm{font-weight:600;line-height:1.35}
+.docs .nm small{display:block;font-weight:400;color:var(--muted)}
+.pdf{font-weight:700;font-size:.92rem;color:var(--red-d);text-decoration:none;white-space:nowrap;border:1.5px solid currentColor;border-radius:999px;padding:7px 14px}
+.pdf:hover{background:var(--red-d);color:#fff}
+@media (max-width:560px){.docs li{grid-template-columns:48px 1fr}.docs li .pdf{grid-column:2;justify-self:start}}
+
+.years{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin:20px 0 10px}
+.years a,.years span{display:flex;flex-direction:column;align-items:center;justify-content:center;height:88px;text-align:center;line-height:1.2;border-radius:10px;text-decoration:none;font-family:var(--display);font-size:1.15rem}
+.years a{background:var(--ink);color:#fff}
+.years a small{font-family:var(--body);font-size:.75rem;color:#C9CED4}
+.years a:hover{background:var(--red-d)}
+.years span{border:2px dashed #D98A1B;color:#8A4B06}
+.years span small{font-family:var(--body);font-size:.75rem}
+@media (max-width:700px){.years{grid-template-columns:repeat(5,1fr)}}
+
+/* formulários */
+.form{display:grid;gap:18px;max-width:640px}
+.form label{font-weight:600;display:block;margin-bottom:6px}
+.form input[type=text],.form input[type=email],.form input[type=tel],.form textarea,.form select{width:100%;font:inherit;padding:13px 14px;border:1.5px solid #C9CED4;border-radius:10px;background:#fff}
+.form textarea{min-height:140px;resize:vertical}
+.form .hint{font-size:.88rem;color:var(--muted);margin-top:4px}
+.check{display:flex;gap:10px;align-items:flex-start;font-weight:500!important}
+.check input{width:20px;height:20px;margin-top:3px;accent-color:var(--red-d)}
+.done{background:#E3F2E6;border-radius:var(--r);padding:28px;max-width:640px}
+.done h3{margin-bottom:8px}
+
+/* doação */
+.give{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+@media (max-width:900px){.give{grid-template-columns:1fr}}
+.gbox{background:#fff;color:var(--ink);border-radius:18px;padding:32px;box-shadow:0 24px 60px -30px rgba(31,35,40,.5)}
+.amounts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.amounts button{font:600 1.2rem var(--display);padding:18px 8px;border-radius:12px;border:2px solid var(--line);background:#fff;cursor:pointer;color:var(--ink)}
+.amounts button[aria-pressed="true"]{border-color:var(--red-d);background:var(--red-soft);color:var(--red-d)}
+.other{display:none;margin-bottom:14px}
+.other.show{display:block}
+.other input{width:100%;font:600 1.2rem var(--body);padding:14px;border:2px solid var(--line);border-radius:12px}
+.pix{border:2px solid var(--ink);border-radius:18px;padding:28px;background:#fff}
+.pix .key{font-family:var(--display);font-size:1.5rem;margin:6px 0 14px;word-break:break-all}
+.copy{font:600 .92rem var(--body);border:1.5px solid var(--ink);background:#fff;border-radius:999px;padding:8px 14px;cursor:pointer}
+.where{columns:2;column-gap:40px;padding-left:20px}
+.where li{margin:0 0 8px;break-inside:avoid}
+@media (max-width:640px){.where{columns:1}}
+
+details.faq{border-bottom:1px solid var(--line);padding:4px 0}
+details.faq summary{cursor:pointer;font-weight:700;font-size:1.08rem;padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:16px}
+details.faq summary::after{content:"+";font-family:var(--display);font-size:1.5rem;line-height:1;color:var(--red-d)}
+details.faq[open] summary::after{content:"–"}
+details.faq p{margin:0 0 18px;color:var(--ink-2);max-width:68ch}
+
+/* modal */
+.modal{position:fixed;inset:0;background:rgba(31,35,40,.6);display:none;align-items:center;justify-content:center;z-index:80;padding:20px}
+.modal.show{display:flex}
+.modal .box{background:#fff;border-radius:18px;padding:32px;max-width:480px;width:100%}
+.modal .box h3{margin-bottom:10px}
+
+.gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.gallery img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:10px}
+.units{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.unit{border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.unit .rn{font-family:var(--display);font-size:1.6rem;color:var(--red-d);line-height:1}
+.unit h3{font-size:1.2rem;margin:6px 0}
+.unit p{margin:0 0 4px;font-size:.95rem;color:var(--ink-2)}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<div class="proto" id="proto"><div class="wrap"><span>Protótipo de redesign<span class="long">. Textos e documentos vêm do site atual (08/11/2026); valores marcados “em revisão” precisam de confirmação da Wise</span>.</span><button type="button" onclick="this.closest('.proto').remove()">Fechar</button></div></div>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Wise Madness, página inicial"><img src="img/logo.png" alt="Wise Madness" width="132" height="42"></a>
+    <nav class="main" id="nav" aria-label="Principal">
+      <a href="#quem-somos" data-sec="quem-somos">Quem somos</a>
+      <a href="#o-que-fazemos" data-sec="o-que-fazemos">O que fazemos</a>
+      <a href="#acontece" data-sec="acontece">Acontece</a>
+      <a href="#transparencia" data-sec="transparencia">Transparência</a>
+      <a href="#participe" data-sec="participe">Participe</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" id="menuBtn">Menu</button>
+    <a class="btn btn-red" href="#doe">Doe agora</a>
+  </div>
+</header>
+<main id="conteudo" tabindex="-1"></main>
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <span class="badge"><img src="img/logo.png" alt="Wise Madness"></span>
+        <p>Arte, cultura, esporte e acolhimento para crianças e adolescentes de Bauru desde 2006.</p>
+        <p class="small">Associação Wise Madness · CNPJ 13.890.668/0001-01<br>Rua Treze de Maio, 15-26, sala A, 2º andar · Bauru, SP</p>
+      </div>
+      <div><h4>A Wise</h4><ul>
+        <li><a href="#quem-somos">Quem somos</a></li><li><a href="#o-que-fazemos">O que fazemos</a></li><li><a href="#acontece">Acontece</a></li><li><a href="#parceiros">Parceiros</a></li><li><a href="#perguntas">Perguntas frequentes</a></li></ul></div>
+      <div><h4>Transparência</h4><ul>
+        <li><a href="#transparencia-parcerias">Parcerias com o poder público</a></li><li><a href="#transparencia-financas">Balanços e auditoria</a></li><li><a href="#transparencia-documentos">Documentos e certidões</a></li><li><a href="#ouvidoria">Ouvidoria</a></li></ul></div>
+      <div><h4>Contato</h4><ul>
+        <li>(14) 3208-7400</li><li>adm@wisemadness.com.br</li><li>Segunda a sexta, 7h30 às 16h30</li><li><a href="#contato">Todas as unidades</a></li></ul>
+        <ul style="margin-top:14px" id="redes"></ul></div>
+    </div>
+    <div class="legal"><span>© 2026 Associação Wise Madness</span><span><a href="#termos">Termos de uso</a> · <a href="#privacidade">Privacidade</a> · <a href="#ouvidoria">Ouvidoria</a> · <a href="#adm">Área administrativa</a></span></div>
+  </div>
+</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="box"><h3 id="mTitle"></h3><p id="mText"></p><button class="btn btn-dark btn-sm" type="button" id="mClose">Entendi</button></div></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js" integrity="sha384-0w2KAL2YHP6wKOkUDzkCDGgVvfmHnj02DHeQ6XcHOgTfFsGyonKOpShMH1x6nk9o" crossorigin="anonymous"></script>
+<script src="config.js"></script>
+<script src="data.js"></script>
+<script src="store.js"></script>
+<script src="admin.js"></script>
+<script>
+const $ = (s, el = document) => el.querySelector(s);
+const main = $('#conteudo');
+const brl = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+const dt = iso => iso.split('-').reverse().join('/');
+const vigente = p => p.fim >= TODAY && p.ini <= TODAY;
+const liberado = p => p.repasses.reduce((s, r) => s + (Number(r.valor) || 0), 0);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const pdf = (f, label = 'Abrir PDF') => f ? `<a class="pdf" href="${esc(fileUrl(f))}" target="_blank" rel="noopener">${label}</a>` : '<span class="pill warn">Sem arquivo</span>';
+
+$('#redes').innerHTML = ORG.redes.map(([n, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${n}</a></li>`).join('');
+
+function modal(t, x) { $('#mTitle').textContent = t; $('#mText').textContent = x; $('#modal').classList.add('show'); $('#mClose').focus(); }
+$('#mClose').onclick = () => $('#modal').classList.remove('show');
+$('#modal').onclick = e => { if (e.target.id === 'modal') $('#modal').classList.remove('show'); };
+document.addEventListener('keydown', e => { if (e.key === 'Escape') $('#modal').classList.remove('show'); });
+$('#menuBtn').onclick = () => { const o = document.body.classList.toggle('nav-open'); $('#menuBtn').setAttribute('aria-expanded', o); $('#menuBtn').textContent = o ? 'Fechar' : 'Menu'; };
+
+const phead = (crumb, title, lead, cls = '') => `<div class="phead ${cls}"><div class="wrap">${crumb ? `<div class="crumb">${crumb}</div>` : ''}<h1>${title}</h1>${lead ? `<p class="lead">${lead}</p>` : ''}</div></div>`;
+const projCard = p => `<a class="card" href="#${p.slug}" data-area="${p.area}"><div class="ph"><img src="${p.img}" alt="" loading="lazy"></div><span class="area">${p.area}</span><h3>${p.nome}</h3><p>${p.resumo}</p></a>`;
+const logoTile = n => { const l = LOGOS.find(x => x[0] === n); return l ? `<div class="logo" title="${esc(l[0])}"><img src="img/logos/${l[1]}" alt="${esc(l[0])}" loading="lazy"></div>` : ''; };
+const accCard = a => `<a class="card" href="#${a.slug}" data-tipo="${a.tipo}"><div class="ph">${a.img ? `<img src="${a.img}" alt="" loading="lazy">` : `<div style="height:100%;display:flex;align-items:center;justify-content:center;background:var(--ink);color:#fff;font-family:var(--display);font-size:1.6rem;padding:24px;text-align:center">${a.titulo}</div>`}</div><span class="area">${a.tipo} · ${a.data}</span><h3>${a.titulo}</h3></a>`;
+
+function bindChips(container, attr) {
+  container.querySelectorAll('.chip').forEach(c => c.onclick = () => {
+    container.querySelectorAll('.chip').forEach(x => x.setAttribute('aria-pressed', x === c));
+    const v = c.dataset.f;
+    document.querySelectorAll(`[data-${attr}]`).forEach(card => card.hidden = v !== 'Todos' && card.dataset[attr] !== v);
+  });
+}
+
+// ---------- páginas ----------
+const P = {};
+
+P.inicio = () => `
+<section class="hero">
+  <img src="img/hero.jpg" alt="Dezenas de crianças e adolescentes da Wise Madness reunidos numa quadra, com camisetas vermelhas e laranja">
+  <div class="wrap">
+    <span class="since">Desde 2006 em Bauru</span>
+    <h1>Juntos, transformamos vidas e construímos um futuro melhor</h1>
+    <p class="lead">Arte, cultura, esporte e acolhimento para crianças e adolescentes em situação de vulnerabilidade.</p>
+    <div class="ctas"><a class="btn btn-red" href="#doe">Doe agora</a><a class="btn btn-ghost" href="#quem-somos">Conheça a Wise</a></div>
+  </div>
+</section>
+<section class="impact" aria-label="Nosso impacto">
+  <div class="wrap">${STATS.map(s => `<div class="patch"><b>${s.n}</b><span>${s.t}</span></div>`).join('')}</div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>O que fazemos</h2><p>Dois serviços socioassistenciais em parceria com a Prefeitura de Bauru e sete projetos de arte, esporte e qualificação.</p></div><a class="link" href="#o-que-fazemos">Ver tudo</a></div>
+    <div class="services">
+      <a class="svc" href="#servico-scfv"><img src="img/sobre.jpg" alt=""><div class="in"><span class="tag">638 por dia</span><h3 style="font-size:1.9rem">Serviço de Convivência</h3><p>Crianças e adolescentes de 6 a 15 anos, no contraturno escolar, em quatro unidades.</p></div></a>
+      <a class="svc plain" href="#servico-acolhimento"><div class="in"><span class="tag">40 acolhidos</span><h3 style="font-size:1.9rem">Acolhimento institucional</h3><p>Duas casas que cuidam de crianças e adolescentes afastados temporariamente da família. Para protegê-los, não mostramos fotos nem endereços.</p></div></a>
+    </div>
+    <div style="height:56px"></div>
+    <div class="chips" id="homeChips" role="group" aria-label="Filtrar projetos">${['Todos', 'Arte e cultura', 'Esporte', 'Qualificação'].map((c, i) => `<button class="chip" type="button" data-f="${c}" aria-pressed="${i === 0}">${c}</button>`).join('')}</div>
+    <div class="grid3">${PROJETOS.map(projCard).join('')}</div>
+  </div>
+</section>
+
+<section class="block dark">
+  <div class="wrap trust">
+    <div>
+      <h2>Transparência que dá para conferir</h2>
+      <p class="lead" style="margin-top:18px">Cada parceria com o poder público tem termo, conta bancária e repasses publicados. Os balanços estão disponíveis desde 2016, e o de 2025 passou por auditoria independente.</p>
+      <p style="margin-top:28px"><a class="btn btn-red" href="#transparencia">Abrir o portal de transparência</a></p>
+    </div>
+    <ul class="facts">
+      <li><b>${L.parcerias.length}</b><span>parcerias com prefeitura, estado e União publicadas com os documentos</span></li>
+      <li><b>${new Set(L.documentos.filter(d => d.cat === 'Balanços e auditoria').map(d => d.ano)).size}</b><span>anos de demonstrações financeiras publicadas entre 2016 e 2025</span></li>
+      <li><b>${L.documentos.filter(d => d.cat === 'Certidões').length}</b><span>certidões de regularidade fiscal e trabalhista</span></li>
+      <li><b>1</b><span>ouvidoria aberta a elogios, sugestões e denúncias, inclusive anônimas</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Acontece na Wise</h2><p>Prêmios, campeonatos e as novidades das unidades.</p></div><a class="link" href="#acontece">Ver tudo</a></div>
+    <div class="grid3">${ACONTECE.slice(0, 3).map(accCard).join('')}</div>
+  </div>
+</section>
+
+<section class="block tight" style="background:var(--soft)">
+  <div class="wrap">
+    <div class="sec-head"><div><h2>Quem caminha com a gente</h2><p>Poder público, conselhos e empresas que financiam e apoiam o trabalho.</p></div><a class="link" href="#parceiros">Todos os ${LOGOS.length} parceiros</a></div>
+    <div class="logos">${['Prefeitura de Bauru', 'CMDCA Bauru', 'Condeca', 'BTG Pactual', 'Lwart', 'Mezzani', 'Paschoalotto', 'Toyota Mori Motors', 'Hyundai', 'Mesa Brasil Sesc', 'Witzler Energia', 'Confiança Supermercados'].map(logoTile).join('')}</div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap split">
+    <div class="panel red"><h2>Doe para manter os projetos vivos</h2><p>Doação única ou mensal, por cartão ou PIX. Sua contribuição mantém oficinas, alimentação e o cuidado diário nas unidades.</p><a class="btn" style="background:#fff;color:var(--red-d)" href="#doe">Quero doar</a></div>
+    <div class="panel"><h2>Doe seu tempo ou o apoio da sua empresa</h2><p>Voluntariado em oficinas, eventos e comunicação, patrocínio, projetos incentivados e voluntariado corporativo.</p><a class="btn btn-dark" href="#participe">Ver como participar</a></div>
+  </div>
+</section>`;
+P.inicio.after = () => bindChips($('#homeChips'), 'area');
+
+P['quem-somos'] = () => `
+${phead('', 'Uma associação que nasceu na rua, no palco e na quadra', 'Somos a Wise, associação sociocultural de Bauru que transforma vidas por meio da arte, da cultura, do esporte e de ações sociais.')}
+<section class="block"><div class="wrap cols2">
+  <div>
+    <h2 style="margin-bottom:28px">Nossa história</h2>
+    <ol class="tl">${TIMELINE.map(([y, t]) => `<li><b>${y}</b>${t}</li>`).join('')}</ol>
+  </div>
+  <div>
+    <img src="img/sobre.jpg" alt="Meninas e meninos da Wise dançando em apresentação, com camisetas vermelhas" style="border-radius:var(--r);margin-bottom:32px">
+    <h3 style="margin-bottom:8px">Missão</h3><p>${ORG.missao}</p>
+    <h3 style="margin:24px 0 8px">Visão</h3><p>${ORG.visao}</p>
+    <h3 style="margin:24px 0 12px">Valores</h3><ul class="values">${ORG.valores.map(v => `<li>${v}</li>`).join('')}</ul>
+  </div>
+</div></section>
+<section class="block tight" style="background:var(--soft)"><div class="wrap">
+  <div class="sec-head"><div><h2>Diretoria</h2><p>Eleita em assembleia, conforme a ata de 4 de maio de 2026.</p></div>${pdf('1792183786799_13_-_Ata_12_Altera_o_04_de_maio_de_2026.pdf', 'Ler a ata')}</div>
+  <div class="units">${L.dirigentes.map(d => `<div class="unit" style="background:#fff"><h3>${esc(d.nome)}</h3><p>${esc(d.cargo || 'Cargo conforme a ata de posse')}</p></div>`).join('')}</div>
+</div></section>
+<section class="block"><div class="wrap">
+  <div class="sec-head"><div><h2>Sete unidades em Bauru</h2><p>Quatro unidades do Serviço de Convivência, duas casas de acolhimento e a sede administrativa.</p></div><a class="link" href="#contato">Telefones e endereços</a></div>
+  <div class="units">${L.unidades.map(u => `<div class="unit"><span class="rn">${esc(u.codigo)}</span><h3>${esc(u.nome)}</h3><p>${esc(u.tipo)}</p></div>`).join('')}</div>
+</div></section>
+<section class="block dark"><div class="wrap">
+  <div class="sec-head"><div><h2>Prêmio Responsabilidade Social</h2><p>Todo ano, a Wise reconhece as empresas e pessoas que sustentam o trabalho. A 4ª edição foi em 20 de agosto de 2026, no Alameda Hall.</p></div><a class="btn btn-red" href="#acontece">Ver eventos</a></div>
+</div></section>`;
+
+P['o-que-fazemos'] = () => `
+${phead('', 'O que fazemos', 'Dois serviços socioassistenciais contínuos e sete projetos de arte, esporte e qualificação, todos gratuitos.')}
+<section class="block"><div class="wrap">
+  <h2 style="margin-bottom:28px">Serviços socioassistenciais</h2>
+  <div class="services">
+    <a class="svc" href="#servico-scfv"><img src="img/sobre.jpg" alt=""><div class="in"><span class="tag">6 a 15 anos</span><h3 style="font-size:1.9rem">${SERVICOS[0].titulo}</h3><p>${SERVICOS[0].resumo}</p></div></a>
+    <a class="svc plain" href="#servico-acolhimento"><div class="in"><span class="tag">0 a 17 anos</span><h3 style="font-size:1.9rem">${SERVICOS[1].titulo}</h3><p>${SERVICOS[1].resumo}</p></div></a>
+  </div>
+  <h2 style="margin:80px 0 24px">Projetos</h2>
+  <div class="chips" id="ofChips" role="group" aria-label="Filtrar projetos">${['Todos', 'Arte e cultura', 'Esporte', 'Qualificação'].map((c, i) => `<button class="chip" type="button" data-f="${c}" aria-pressed="${i === 0}">${c}</button>`).join('')}</div>
+  <div class="grid3">${PROJETOS.map(projCard).join('')}</div>
+</div></section>`;
+P['o-que-fazemos'].after = () => bindChips($('#ofChips'), 'area');
+
+function itemPage(it, isSvc) {
+  const parc = (it.parcerias || []).map(id => L.parcerias.find(p => p.id === id)).filter(Boolean);
+  const facts = isSvc ? [['Para quem', it.publico], ['Onde', it.onde], ['Quando', it.quando], ['Custo', 'Gratuito']] : [['Para quem', it.publico], ['Onde', it.onde], ['Quando', it.quando], ['Custo', it.custo]];
+  const grade = it.grade ? Object.entries(it.grade).map(([u, rows]) => `<h3 style="margin:32px 0 10px">${u}</h3><div class="tscroll"><table class="t"><thead><tr><th>Oficina</th><th>Dias e horários</th></tr></thead><tbody>${rows.map(r => `<tr><td><b>${r[0]}</b></td><td>${r[1]}</td></tr>`).join('')}</tbody></table></div>`).join('') : '';
+  return `${phead(`<a href="#o-que-fazemos">O que fazemos</a> / ${isSvc ? 'Serviços' : it.area}`, isSvc ? it.titulo : it.nome, it.resumo)}
+  ${it.img && !it.poster ? `<img class="cover" src="${it.img}" alt="">` : ''}
+  <section class="block" style="padding-top:${it.img && !it.poster ? 0 : 48}px"><div class="wrap">
+    <dl class="factsrow ${it.img && !it.poster ? '' : 'flat'}">${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('')}</dl>
+    <div class="cols2">
+      <div class="prose">${it.texto.map(t => `<p>${t}</p>`).join('')}${grade}</div>
+      <aside class="aside">
+        ${it.poster ? `<img src="${it.img}" alt="Cartaz de divulgação do ${it.nome}" style="border-radius:12px;margin-bottom:28px">` : ''}
+        ${it.contatos.length ? `<h3>Informações</h3><ul>${it.contatos.map(([n, t]) => `<li><b>${t}</b><br><span class="muted">${n}</span></li>`).join('')}</ul>` : ''}
+        ${parc.length ? `<h3>Parcerias que financiam</h3><ul>${parc.map(p => `<li><a href="#parceria-${p.id}">${p.num.split(' · ')[0]}</a><br><span class="muted small">${p.orgao}</span></li>`).join('')}</ul>` : ''}
+        <a class="btn btn-red" href="#doe">Apoiar este trabalho</a>
+      </aside>
+    </div>
+  </div></section>`;
+}
+
+P.acontece = () => `
+${phead('', 'Acontece na Wise', 'Eventos, notícias, o informativo Wise News e materiais para baixar.')}
+<section class="block"><div class="wrap">
+  <div class="chips" id="acChips" role="group" aria-label="Filtrar">${['Todos', 'Evento', 'Notícia', 'Wise News', 'Material'].map((c, i) => `<button class="chip" type="button" data-f="${c}" aria-pressed="${i === 0}">${c === 'Todos' ? 'Todos' : c === 'Evento' ? 'Eventos' : c === 'Notícia' ? 'Notícias' : c === 'Material' ? 'Materiais' : c}</button>`).join('')}</div>
+  <div class="grid3">${ACONTECE.map(accCard).join('')}</div>
+  <p class="muted" style="margin-top:48px">Vídeos das apresentações estão no <a href="https://www.youtube.com/@WMsabialoucura" target="_blank" rel="noopener">canal da Wise no YouTube</a>.</p>
+</div></section>`;
+P.acontece.after = () => bindChips($('#acChips'), 'tipo');
+
+function accPage(a) {
+  return `${phead(`<a href="#acontece">Acontece</a> / ${a.tipo}`, a.titulo, a.data)}
+  <section class="block"><div class="wrap cols2">
+    <div class="prose"><p style="font-size:1.15rem">${a.texto}</p>${a.pdf ? `<p>${pdf(a.pdf, 'Baixar PDF')}</p>` : ''}
+    ${a.galeria ? `<h2 class="h">Galeria</h2><div class="gallery">${a.galeria.map(g => `<img src="${g}" alt="" loading="lazy">`).join('')}</div>` : ''}</div>
+    <div>${a.img && !a.galeria ? `<img src="${a.img}" alt="" style="border-radius:var(--r)">` : ''}</div>
+  </div></section>`;
+}
+
+P.parceiros = () => {
+  const used = new Set(Object.values(LOGO_GROUPS).flat());
+  const rest = LOGOS.map(l => l[0]).filter(n => !used.has(n));
+  const grp = (t, list) => `<h2 class="h" style="margin-top:56px">${t}</h2><div class="logos">${list.map(logoTile).join('')}</div>`;
+  return `${phead('<a href="#quem-somos">Quem somos</a>', 'Parceiros', `${LOGOS.length} organizações financiam, patrocinam e apoiam o trabalho da Wise.`)}
+  <section class="block" style="padding-top:16px"><div class="wrap">${Object.entries(LOGO_GROUPS).map(([t, l]) => grp(t, l)).join('')}${grp('Apoiadores', rest)}
+  <div class="panel" style="margin-top:64px"><h2>Sua empresa pode apoiar</h2><p>Doações, patrocínio de projetos incentivados (como as Oficinas Culturais pela Lei Rouanet), ações sociais e voluntariado corporativo.</p><a class="btn btn-dark" href="#contato">Falar com a equipe</a></div>
+  </div></section>`;
+};
+
+// ---------- transparência ----------
+const TNAV = [['transparencia', 'Visão geral'], ['transparencia-parcerias', 'Parcerias públicas'], ['transparencia-financas', 'Balanços e auditoria'], ['transparencia-documentos', 'Documentos e certidões'], ['transparencia-contas', 'Contas bancárias'], ['transparencia-dirigentes', 'Diretoria e unidades'], ['ouvidoria', 'Ouvidoria']];
+const fmtDT = iso => { if (!iso) return '–'; const d = new Date(iso); return isNaN(d) ? iso : d.toLocaleDateString('pt-BR') + ', ' + d.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' }); };
+const tshell = (route, title, lead, body) => `${phead('<a href="#transparencia">Transparência</a>', title, lead, 'dark')}
+<div class="wrap tlayout" style="padding-left:24px;padding-right:24px">
+  <nav class="tnav" aria-label="Transparência">${TNAV.map(([r, t]) => `<a href="#${r}" ${r === route ? 'aria-current="page"' : ''}>${t}</a>`).join('')}<p class="upd">Última atualização: ${fmtDT(L.config.atualizadoEm)}</p></nav>
+  <div>${body}</div>
+</div>`;
+const docValidade = d => {
+  if (d.cat !== 'Certidões') return '';
+  if (!d.validade) return '<span class="pill warn">Confira a validade no documento</span>';
+  return d.validade < TODAY ? `<span class="pill red">Vencida em ${dt(d.validade)}</span>` : `<span class="pill ok">Válida até ${dt(d.validade)}</span>`;
+};
+
+P.transparencia = () => {
+  const vig = L.parcerias.filter(vigente).length;
+  const anos = [...new Set(L.documentos.filter(d => d.cat === 'Balanços e auditoria').map(d => d.ano))].sort();
+  const faltam = []; for (let y = 2016; y < Number(TODAY.slice(0, 4)); y++) if (!anos.includes(y)) faltam.push(y);
+  const aud = L.documentos.filter(d => /auditor/i.test(d.nome)).sort((a, b) => b.ano - a.ano)[0];
+  return tshell('transparencia', 'Transparência', L.config.intro, `
+  <div class="kpis">
+    <div class="kpi"><b>${L.parcerias.length}</b><span>parcerias publicadas, ${vig} vigente${vig === 1 ? '' : 's'} hoje</span><a class="link" href="#transparencia-parcerias">Ver parcerias</a></div>
+    <div class="kpi"><b>${anos.length ? anos[0] + '–' + anos[anos.length - 1] : '–'}</b><span>demonstrações financeiras publicadas${faltam.length ? '; falta ' + faltam.join(', ') : ''}</span><a class="link" href="#transparencia-financas">Ver balanços</a></div>
+    <div class="kpi"><b>${aud ? aud.ano : '–'}</b><span>${aud ? 'contas com parecer de auditoria independente' : 'nenhum parecer de auditoria publicado'}</span><a class="link" href="#transparencia-financas">Ver parecer</a></div>
+  </div>
+  <h2 class="h" style="margin-top:0">O que você quer saber?</h2>
+  <div class="qgrid">
+    <a class="q" href="#transparencia-parcerias"><h3>Quanto a Wise recebe do poder público?</h3><p>Termos de fomento e colaboração, valores, vigência, repasses e prestação de contas.</p></a>
+    <a class="q" href="#transparencia-financas"><h3>Como estão as contas?</h3><p>Balanços, DRE, notas explicativas e o parecer da auditoria.</p></a>
+    <a class="q" href="#transparencia-documentos"><h3>A Wise está regular?</h3><p>Estatuto, ata da diretoria e certidões fiscais e trabalhistas.</p></a>
+    <a class="q" href="#transparencia-contas"><h3>Para onde vai o dinheiro?</h3><p>As contas bancárias de doações, da Lei Rouanet e de cada parceria.</p></a>
+    <a class="q" href="#transparencia-dirigentes"><h3>Quem responde pela Wise?</h3><p>Diretoria eleita, unidades e contatos.</p></a>
+    <a class="q" href="#ouvidoria"><h3>Quero falar com a ouvidoria</h3><p>Elogios, sugestões, reclamações e denúncias, inclusive anônimas.</p></a>
+  </div>
+  <h2 class="h">Relatórios de atividades</h2>
+  <ul class="docs">${L.documentos.filter(d => d.cat === 'Relatórios de atividades').map(d => `<li><span class="yr">${d.ano}</span><span class="nm">${esc(d.nome)}</span>${pdf(d.url)}</li>`).join('') || '<li class="muted">Nenhum relatório publicado.</li>'}</ul>
+  <p class="muted small" style="margin-top:28px">${esc(L.config.nota)} Associação Wise Madness · CNPJ ${ORG.cnpj} · ativa desde ${ORG.abertura}.</p>`);
+};
+
+const pcOk = s => ['Apresentada', 'Em análise', 'Aprovada', 'Aprovada com ressalvas'].includes(s);
+const pStatus = p => `${vigente(p) ? '<span class="pill ok">Vigente</span>' : p.ini > TODAY ? '<span class="pill off">A iniciar</span>' : '<span class="pill off">Encerrada</span>'}${p.pcStatus === 'Rejeitada' ? '<span class="pill red">Prestação rejeitada</span>' : pcOk(p.pcStatus) ? `<span class="pill ok">Prestação ${p.pcStatus.toLowerCase()}</span>` : p.pcStatus === 'A apresentar' ? '<span class="pill off">Prestação a apresentar</span>' : '<span class="pill warn">Prestação não publicada</span>'}${p.alerta ? '<span class="pill red">Em revisão</span>' : ''}`;
+
+let pf = { esfera: 'Todas', sit: 'Todas', area: 'Todas', q: '' };
+P['transparencia-parcerias'] = () => tshell('transparencia-parcerias', 'Parcerias com o poder público', 'Termos de fomento e de colaboração com a Prefeitura de Bauru, o Estado de São Paulo e a União.', `
+  <div class="toolbar">
+    <div class="seg" role="group" aria-label="Esfera">${['Todas', ...ESFERAS].map(v => `<button type="button" data-k="esfera" data-v="${v}" aria-pressed="${pf.esfera === v}">${v}</button>`).join('')}</div>
+    <div class="seg" role="group" aria-label="Situação">${['Todas', 'Vigentes', 'Encerradas'].map(v => `<button type="button" data-k="sit" data-v="${v}" aria-pressed="${pf.sit === v}">${v}</button>`).join('')}</div>
+    <select id="pArea" aria-label="Área"><option value="Todas">Todas as áreas</option>${[...new Set(L.parcerias.map(p => p.area))].map(a => `<option value="${esc(a)}" ${pf.area === a ? 'selected' : ''}>${esc(a)}</option>`).join('')}</select>
+    <input id="pQ" type="search" placeholder="Buscar por número, órgão ou vereador" value="${esc(pf.q)}" aria-label="Buscar parcerias">
+  </div>
+  <p class="count" id="pCount" aria-live="polite"></p>
+  <ul class="plist" id="pList"></ul>`);
+P['transparencia-parcerias'].after = () => {
+  const draw = () => {
+    const q = pf.q.toLowerCase();
+    const list = L.parcerias.filter(p => (pf.esfera === 'Todas' || p.esfera === pf.esfera) && (pf.sit === 'Todas' || (pf.sit === 'Vigentes') === vigente(p)) && (pf.area === 'Todas' || p.area === pf.area) && (!q || (p.nome + ' ' + p.num + ' ' + p.orgao).toLowerCase().includes(q)));
+    $('#pCount').textContent = `${list.length} de ${L.parcerias.length} parcerias`;
+    $('#pList').innerHTML = list.map(p => `<li><a href="#parceria-${p.id}"><span class="nm">${esc(p.nome)}<small>${esc(p.num.split(' · ')[0])} · ${esc(p.orgao)} · ${p.esfera}</small></span><span class="vig">${dt(p.ini)} a ${dt(p.fim)}</span><span class="val">${brl(Number(p.valor) || 0)}</span><span class="st">${pStatus(p)}</span></a></li>`).join('') || '<li style="padding:24px 8px" class="muted">Nenhuma parceria com esses filtros. Limpe a busca ou escolha outra esfera.</li>';
+  };
+  document.querySelectorAll('.seg button').forEach(b => b.onclick = () => { pf[b.dataset.k] = b.dataset.v; b.parentElement.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === b)); draw(); });
+  $('#pArea').onchange = e => { pf.area = e.target.value; draw(); };
+  $('#pQ').oninput = e => { pf.q = e.target.value; draw(); };
+  draw();
+};
+
+function parceriaPage(p) {
+  const lib = liberado(p), pct = p.valor ? Math.min(100, Math.round(lib / p.valor * 100)) : 0;
+  const pcDates = [['Data prevista', p.pcPrevista], ['Apresentada em', p.pcApresentada]].filter(x => x[1]).map(([k, v]) => `${k}: ${dt(v)}`).join(' · ');
+  return tshell('transparencia-parcerias', esc(p.nome), `${esc(p.orgao)} · ${p.esfera}`, `
+  <p style="margin:0 0 6px"><a class="link" href="#transparencia-parcerias">Todas as parcerias</a></p>
+  <p style="margin:18px 0 6px">${pStatus(p)}</p>
+  <p class="muted small">${esc(p.num)}</p>
+  ${p.objeto ? `<p style="margin-top:14px">${esc(p.objeto)}</p>` : ''}
+  <dl class="dl">
+    <div><dt>Tipo de instrumento</dt><dd>${p.tipo === 'Fomento' ? 'Termo de fomento' : p.tipo === 'Colaboração' ? 'Termo de colaboração' : esc(p.tipo)}</dd></div>
+    <div><dt>Vigência</dt><dd>${dt(p.ini)} a ${dt(p.fim)}</dd></div>
+    <div><dt>Assinatura</dt><dd>${p.assinatura ? dt(p.assinatura) : '–'}</dd></div>
+    <div><dt>Valor total</dt><dd>${brl(Number(p.valor) || 0)}</dd></div>
+    <div><dt>Repasses registrados</dt><dd>${brl(lib)}</dd></div>
+    <div><dt>Execução registrada</dt><dd>${p.repasses.length ? pct + '%' : '–'}<div class="bar" aria-hidden="true"><i style="width:${pct}%"></i></div></dd></div>
+  </dl>
+  <p class="small"><b>Conta vinculada:</b> ${p.conta ? `${esc(p.contaBanco || '')} · Ag. ${esc(p.contaAgencia || '')} · C/C ${esc(p.conta)}` : 'não informada'}</p>
+  ${p.alerta ? `<div class="alert"><b>Dado em revisão</b>${esc(p.alerta)}</div>` : ''}
+  <h2 class="h">Documentos da parceria</h2>
+  ${p.docs.length ? `<ul class="docs">${p.docs.map(d => `<li><span class="yr">${(p.assinatura || p.ini).slice(0, 4)}</span><span class="nm">${esc(d.nome)}</span>${pdf(d.url)}</li>`).join('')}</ul>` : '<p class="muted">Nenhum documento publicado.</p>'}
+  <h2 class="h">Repasses</h2>
+  ${p.repasses.length ? `<div class="tscroll"><table class="t"><thead><tr><th>Data do crédito</th><th class="num">Valor</th><th>Extrato bancário</th><th>Relatório</th></tr></thead><tbody>${p.repasses.map(r => `<tr><td>${dt(r.data)}</td><td class="num">${brl(Number(r.valor) || 0)}</td><td>${r.extrato ? pdf(r.extrato, 'Extrato') : '–'}</td><td>${r.relatorio ? pdf(r.relatorio, 'Demonstrativo') : '<span class="pill warn">Em preparação</span>'}</td></tr>`).join('')}</tbody></table></div>` : '<p class="muted">Nenhum repasse registrado até agora.</p>'}
+  <h2 class="h">Prestação de contas</h2>
+  <p><b>Situação:</b> ${esc(p.pcStatus)}${pcDates ? ` · ${pcDates}` : ''}${p.pcResultado ? `<br><b>Resultado:</b> ${esc(p.pcResultado)}` : ''}</p>
+  ${p.pc.length ? `<ul class="docs">${p.pc.map(x => `<li><span class="yr">${esc(x.ano)}</span><span class="nm">${esc(x.desc)}</span>${pdf(x.url)}</li>`).join('')}</ul>` : `<p class="muted">Nenhum documento de prestação de contas publicado.</p>`}`);
+}
+
+P['transparencia-financas'] = () => {
+  const yrs = [], last = Number(TODAY.slice(0, 4)) - 1;
+  for (let y = 2016; y <= last; y++) { const d = L.documentos.find(x => x.cat === 'Balanços e auditoria' && x.ano === y && /demonstra|balan/i.test(x.nome) && !/DRE|balancete|resultado/i.test(x.nome)); yrs.push(d ? `<a href="${fileUrl(d.url)}" target="_blank" rel="noopener">${y}<small>abrir PDF</small></a>` : `<span>${y}<small>não publicado</small></span>`); }
+  const ult = Math.max(...L.documentos.filter(d => d.cat === 'Balanços e auditoria').map(d => d.ano), 0);
+  return tshell('transparencia-financas', 'Balanços e auditoria', 'Demonstrações financeiras anuais da associação e o parecer dos auditores independentes.', `
+  <h2 class="h" style="margin-top:0">Demonstrações financeiras por ano</h2>
+  <div class="years" style="grid-template-columns:repeat(${Math.min(yrs.length, 10)},1fr)">${yrs.join('')}</div>
+  <h2 class="h">Exercício de ${ult}</h2>
+  <ul class="docs">${L.documentos.filter(d => d.cat === 'Balanços e auditoria' && d.ano === ult).map(d => `<li><span class="yr">${d.ano}</span><span class="nm">${esc(d.nome)}</span>${pdf(d.url)}</li>`).join('')}</ul>
+  ${L.config.financasNota ? `<h2 class="h">Receitas e despesas</h2><p>${esc(L.config.financasNota)}</p>` : ''}`);
+};
+
+let df = 'Todos';
+P['transparencia-documentos'] = () => tshell('transparencia-documentos', 'Documentos e certidões', 'Estatuto, atas, certidões de regularidade, balanços e relatórios anuais.', `
+  <div class="chips" id="dChips" role="group" aria-label="Filtrar documentos">${['Todos', ...DOC_CATS].filter(c => c === 'Todos' || L.documentos.some(d => d.cat === c)).map(c => `<button class="chip" type="button" data-f="${c}" aria-pressed="${df === c}">${c}</button>`).join('')}</div>
+  <p class="count">${L.documentos.length} documentos.</p>
+  <ul class="docs">${L.documentos.map(d => `<li data-cat="${esc(d.cat)}"><span class="yr">${d.ano}</span><span class="nm">${esc(d.nome)}<small>${esc(d.cat)} ${docValidade(d)}</small></span>${pdf(d.url)}</li>`).join('')}</ul>`);
+P['transparencia-documentos'].after = () => {
+  const apply = () => document.querySelectorAll('.docs li[data-cat]').forEach(li => li.hidden = df !== 'Todos' && li.dataset.cat !== df);
+  document.querySelectorAll('#dChips .chip').forEach(c => c.onclick = () => { df = c.dataset.f; document.querySelectorAll('#dChips .chip').forEach(x => x.setAttribute('aria-pressed', x === c)); apply(); });
+  apply();
+};
+
+P['transparencia-contas'] = () => {
+  const byConta = {};
+  L.parcerias.filter(p => p.conta).forEach(p => (byConta[p.conta] = byConta[p.conta] || { banco: p.contaBanco, ag: p.contaAgencia, ps: [] }).ps.push(p));
+  const groups = {}; L.contas.forEach(c => (groups[c.grupo] = groups[c.grupo] || []).push(c));
+  return tshell('transparencia-contas', 'Contas bancárias', 'Cada parceria pública tem uma conta exclusiva. Doações e projetos incentivados têm contas próprias.', `
+  ${Object.entries(groups).map(([t, rows]) => `<h2 class="h">${esc(t)}</h2><div class="tscroll"><table class="t"><thead><tr><th>Uso</th><th>Banco</th><th>Agência</th><th>Conta</th></tr></thead><tbody>${rows.map(r => `<tr><td><b>${esc(r.uso)}</b></td><td>${esc(r.banco)}</td><td>${esc(r.agencia)}</td><td>${esc(r.conta)}</td></tr>`).join('')}</tbody></table></div>`).join('')}
+  <h2 class="h">Contas vinculadas a parcerias</h2>
+  <div class="tscroll"><table class="t"><thead><tr><th>Conta</th><th>Parceria</th></tr></thead><tbody>${Object.entries(byConta).map(([c, o]) => `<tr><td><b>${esc(c)}</b><br><span class="muted small">${esc(o.banco || '')} · Ag. ${esc(o.ag || '')}</span>${o.ps.length > 1 ? '<br><span class="pill warn">Ligada a mais de um termo</span>' : ''}</td><td>${o.ps.map(p => `<a href="#parceria-${p.id}">${esc(p.num.split(' · ')[0])}</a> · ${esc(p.nome)}`).join('<br>')}</td></tr>`).join('')}</tbody></table></div>`);
+};
+
+P['transparencia-dirigentes'] = () => tshell('transparencia-dirigentes', 'Diretoria e unidades', 'Quem responde pela associação e onde a Wise atende.', `
+  <h2 class="h" style="margin-top:0">Diretoria</h2>
+  <ul class="docs">${L.dirigentes.map(d => `<li><span class="yr">·</span><span class="nm">${esc(d.nome)}<small>${esc(d.cargo || 'Cargo conforme a ata de posse')}${d.mandatoIni ? ` · mandato desde ${dt(d.mandatoIni)}${d.mandatoFim ? ' até ' + dt(d.mandatoFim) : ''}` : ''}</small></span><span></span></li>`).join('')}</ul>
+  ${(() => { const ata = L.documentos.filter(d => /ata/i.test(d.nome) && d.cat === 'Estatuto e atas').sort((a, b) => b.ano - a.ano)[0]; return ata ? `<p style="margin-top:16px">${pdf(ata.url, esc(ata.nome))}</p>` : ''; })()}
+  <h2 class="h">Unidades de atendimento</h2>
+  <div class="tscroll"><table class="t"><thead><tr><th>Unidade</th><th>Atividade</th><th>Contato</th><th>Endereço</th></tr></thead><tbody>${L.unidades.map(u => `<tr><td><b>${esc(u.codigo)} · ${esc(u.nome)}</b></td><td>${esc(u.tipo)}<br><span class="muted small">${esc(u.hor)}</span></td><td>${esc(u.tel)}<br><span class="muted small">${esc(u.email)}</span></td><td>${u.protegido || !u.end ? '<span class="muted">Endereço protegido para a segurança das crianças</span>' : esc(u.end)}</td></tr>`).join('')}</tbody></table></div>`);
+
+P.ouvidoria = () => tshell('ouvidoria', 'Ouvidoria', 'Canal para elogios, sugestões, solicitações, reclamações e denúncias. Você pode se identificar ou não.', `
+  <div id="oWrap">
+  <form class="form" id="oForm" novalidate>
+    <div><label>Tipo de manifestação</label><div class="chips" style="margin:0" id="oTipo">${['Elogio', 'Sugestão', 'Solicitação', 'Reclamação', 'Denúncia'].map((t, i) => `<button class="chip" type="button" data-f="${t}" aria-pressed="${i === 0}">${t}</button>`).join('')}</div></div>
+    <label class="check"><input type="checkbox" id="oAnon"> Quero enviar de forma anônima</label>
+    <div id="oId"><div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div><label for="oNome">Nome</label><input type="text" id="oNome" autocomplete="name"></div><div><label for="oEmail">E-mail ou telefone</label><input type="text" id="oEmail"></div></div><p class="hint">Usamos esses dados só para responder.</p></div>
+    <div><label for="oMsg">Mensagem</label><textarea id="oMsg" required></textarea></div>
+    <div><button class="btn btn-red" type="submit" id="oSend">Enviar manifestação</button></div>
+    <p class="small muted" id="oErr" role="alert"></p>
+  </form></div>`);
+P.ouvidoria.after = () => {
+  let tipo = 'Elogio';
+  document.querySelectorAll('#oTipo .chip').forEach(c => c.onclick = () => { tipo = c.dataset.f; document.querySelectorAll('#oTipo .chip').forEach(x => x.setAttribute('aria-pressed', x === c)); });
+  $('#oAnon').onchange = e => $('#oId').hidden = e.target.checked;
+  $('#oForm').onsubmit = async e => {
+    e.preventDefault();
+    if (!$('#oMsg').value.trim()) { $('#oMsg').focus(); $('#oMsg').style.borderColor = 'var(--red-d)'; return; }
+    const anon = $('#oAnon').checked;
+    const msg = { tipo, anonimo: anon, nome: anon ? '' : $('#oNome').value.trim(), contato: anon ? '' : $('#oEmail').value.trim(), msg: $('#oMsg').value.trim() };
+    if (!CAP.sb) { $('#oErr').textContent = 'O envio on-line ainda não está disponível. Ligue para (14) 3208-7400 ou escreva para adm@wisemadness.com.br.'; return; }
+    $('#oSend').disabled = true; $('#oSend').textContent = 'Enviando…'; $('#oErr').textContent = '';
+    let protocolo;
+    try { protocolo = await registrarManifestacao(msg); }
+    catch (err) { $('#oSend').disabled = false; $('#oSend').textContent = 'Enviar manifestação'; $('#oErr').textContent = 'Não foi possível registrar agora. Tente de novo ou ligue para (14) 3208-7400.'; return; }
+    $('#oWrap').innerHTML = `<div class="done"><h3>Manifestação registrada</h3><p>Seu número de protocolo é <b>${esc(protocolo)}</b>. Guarde-o para acompanhar a resposta.</p></div>`;
+  };
+};
+
+P.participe = () => `
+${phead('', 'Participe', 'Você pode doar, ser voluntário ou trazer sua empresa para perto da Wise.')}
+<section class="block"><div class="wrap split">
+  <div class="panel red"><h2>Doar</h2><p>Doação única ou mensal, por cartão ou PIX.</p><a class="btn" style="background:#fff;color:var(--red-d)" href="#doe">Fazer uma doação</a></div>
+  <div class="panel"><h2>Para empresas</h2><p>Patrocínio de projetos incentivados (Lei Rouanet), doações, ações sociais e voluntariado corporativo. Dezenas de empresas de Bauru e região já apoiam.</p><a class="btn btn-dark" href="#parceiros">Ver parceiros</a></div>
+</div></section>
+<section class="block" style="padding-top:0"><div class="wrap cols2">
+  <div id="vWrap">
+    <h2 style="margin-bottom:12px">Seja voluntário</h2>
+    <p class="muted" style="margin-bottom:28px">Conte como quer ajudar. A equipe responde por e-mail com as oportunidades abertas nas unidades.</p>
+    <form class="form" id="vForm" novalidate>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px"><div><label for="vNome">Nome</label><input type="text" id="vNome" required autocomplete="name"></div><div><label for="vEmail">E-mail</label><input type="email" id="vEmail" required autocomplete="email"></div></div>
+      <div><label>Como você quer ajudar?</label><div class="chips" style="margin:0" id="vArea">${['Oficinas e eventos', 'Comunicação e fotos', 'Apoio administrativo', 'Outra forma'].map(t => `<button class="chip" type="button" data-f="${t}" aria-pressed="false">${t}</button>`).join('')}</div></div>
+      <div><label for="vDisp">Disponibilidade</label><select id="vDisp"><option>Durante a semana</option><option>Fins de semana</option><option>Pontual, em eventos</option></select></div>
+      <div><label for="vMsg">Mensagem (opcional)</label><textarea id="vMsg"></textarea></div>
+      <label class="check"><input type="checkbox" id="vOk" required> Li e concordo com os <a href="#termos">termos de uso</a> e a <a href="#privacidade">política de privacidade</a>.</label>
+      <div><button class="btn btn-red" type="submit">Quero ser voluntário</button></div>
+    </form>
+  </div>
+  <aside class="aside"><h3>Contato direto</h3><ul><li><b>(14) 3208-7400</b><br><span class="muted">Administrativo</span></li><li><b>adm@wisemadness.com.br</b></li><li><span class="muted">Segunda a sexta, 7h30 às 16h30</span></li></ul><a class="link" href="#contato">Falar com uma unidade</a></aside>
+</div></section>`;
+P.participe.after = () => {
+  document.querySelectorAll('#vArea .chip').forEach(c => c.onclick = () => c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') !== 'true'));
+  $('#vForm').onsubmit = e => {
+    e.preventDefault();
+    const bad = ['#vNome', '#vEmail'].find(s => !$(s).value.trim()) || (!$('#vOk').checked && '#vOk');
+    if (bad) { $(bad).focus(); if (bad !== '#vOk') $(bad).style.borderColor = 'var(--red-d)'; return; }
+    $('#vWrap').innerHTML = `<div class="done"><h3>Inscrição pronta, ${esc($('#vNome').value.split(' ')[0])}</h3><p>No site publicado, a equipe recebe sua inscrição e responde por e-mail.</p><p class="small muted" style="margin:0">Protótipo: nada foi enviado.</p></div>`;
+  };
+};
+
+P.doe = () => `
+<div class="phead red"><div class="wrap give">
+  <div>
+    <h1>Doe para transformar a vida de crianças e jovens em Bauru</h1>
+    <p class="lead">Sua contribuição mantém oficinas, alimentação, materiais e o cuidado diário nas sete unidades da Wise.</p>
+    <div class="pix" style="margin-top:32px;color:var(--ink)">
+      <b>Prefere PIX?</b>
+      <p class="key">Chave a confirmar com a Wise</p>
+      <p class="small" style="margin-bottom:14px">Antes de pagar, confira se o favorecido é <b>Associação Wise Madness</b>, CNPJ <b>13.890.668/0001-01</b>.</p>
+      <button class="copy" type="button" id="cpCnpj">Copiar CNPJ</button>
+    </div>
+  </div>
+  <div class="gbox" id="gbox">
+    <div class="seg" role="group" aria-label="Frequência" style="width:100%"><button type="button" data-fr="única" aria-pressed="false" style="flex:1">Uma vez</button><button type="button" data-fr="mensal" aria-pressed="true" style="flex:1">Todo mês</button></div>
+    <p class="small muted" style="margin:12px 0 0">Doações mensais ajudam a Wise a planejar o ano.</p>
+    <div class="amounts" role="group" aria-label="Valor">${[30, 50, 100, 200, 500].map(v => `<button type="button" data-v="${v}" aria-pressed="${v === 50}">R$ ${v}</button>`).join('')}<button type="button" data-v="outro" aria-pressed="false">Outro</button></div>
+    <div class="other" id="other"><label class="small muted" for="otherV">Valor em reais</label><input id="otherV" type="number" min="5" step="1" inputmode="numeric" placeholder="Ex.: 75"></div>
+    <button class="btn btn-red" style="width:100%;font-size:1.1rem" type="button" id="giveBtn">Doar R$ 50 por mês</button>
+    <p class="small muted" style="margin:14px 0 0">Pagamento seguro por cartão ou PIX, processado pela Impactodo.</p>
+  </div>
+</div></div>
+<section class="block"><div class="wrap cols2">
+  <div>
+    <h2 style="margin-bottom:20px">Para onde vai sua doação</h2>
+    <ul class="where"><li>Atividades socioeducativas</li><li>Oficinas culturais, artísticas, esportivas e educativas</li><li>Materiais pedagógicos e culturais</li><li>Alimentação e itens de uso diário</li><li>Estrutura dos espaços de atendimento</li><li>Ações de acolhimento e convivência</li><li>Projetos de fortalecimento de vínculos</li><li>Apoio às equipes dos projetos</li></ul>
+    <p style="margin-top:20px">As contas da Wise são auditadas, e as doações têm conta bancária própria. <a class="link" href="#transparencia">Veja a transparência</a></p>
+    <h2 style="margin:56px 0 12px">Perguntas sobre doação</h2>
+    ${[['Posso doar qualquer valor?', 'Sim. Toda contribuição ajuda a manter os projetos. Você pode doar uma vez ou todo mês.'], ['A doação é segura?', 'Doe só pelos canais desta página. Antes de pagar, confira se o favorecido é a Associação Wise Madness e se o CNPJ é 13.890.668/0001-01.'], ['Para onde vai a minha doação?', 'Para a manutenção dos projetos sociais, culturais, esportivos, educativos e de acolhimento da Wise em Bauru.'], ['Empresas podem apoiar?', 'Sim, com doações, patrocínio, projetos incentivados, ações sociais e voluntariado corporativo. Fale com a equipe pelo (14) 3208-7400.'], ['Como sei como o dinheiro foi usado?', 'Os balanços, o parecer da auditoria e a prestação de contas de cada parceria estão na área de Transparência.']].map(([q, a]) => `<details class="faq"><summary>${q}</summary><p>${a}</p></details>`).join('')}
+  </div>
+  <aside class="aside"><h3>Dados da instituição</h3><ul><li><b>Associação Wise Madness</b></li><li>CNPJ 13.890.668/0001-01</li><li>Associação privada sem fins lucrativos, ativa desde 23/05/2011</li><li>Bauru, SP</li></ul><h3>Dúvidas</h3><ul><li>(14) 3208-7400</li><li>adm@wisemadness.com.br</li></ul></aside>
+</div></section>`;
+P.doe.after = () => {
+  let fr = 'mensal', v = 50;
+  const lbl = () => { const val = v === 'outro' ? Number($('#otherV').value || 0) : v; $('#giveBtn').textContent = val ? `Doar R$ ${val}${fr === 'mensal' ? ' por mês' : ''}` : 'Digite um valor'; };
+  document.querySelectorAll('#gbox .seg button').forEach(b => b.onclick = () => { fr = b.dataset.fr; document.querySelectorAll('#gbox .seg button').forEach(x => x.setAttribute('aria-pressed', x === b)); lbl(); });
+  document.querySelectorAll('.amounts button').forEach(b => b.onclick = () => { v = b.dataset.v === 'outro' ? 'outro' : Number(b.dataset.v); document.querySelectorAll('.amounts button').forEach(x => x.setAttribute('aria-pressed', x === b)); $('#other').classList.toggle('show', v === 'outro'); if (v === 'outro') $('#otherV').focus(); lbl(); });
+  $('#otherV').oninput = lbl;
+  $('#giveBtn').onclick = () => modal('Próximo passo: pagamento', 'No site publicado, este botão abre o pagamento seguro da Impactodo com o valor e a frequência escolhidos. Neste protótipo, nenhuma cobrança é feita.');
+  $('#cpCnpj').onclick = async () => { try { await navigator.clipboard.writeText('13.890.668/0001-01'); $('#cpCnpj').textContent = 'CNPJ copiado'; } catch (e) { $('#cpCnpj').textContent = '13.890.668/0001-01'; } };
+};
+
+P.contato = () => `
+${phead('', 'Contato', 'Fale com a sede administrativa ou direto com a unidade.')}
+<section class="block"><div class="wrap">
+  <div class="kpis" style="grid-template-columns:repeat(4,1fr)">
+    <a class="q" href="#doe"><h3>Doações</h3><p>(14) 3208-7400</p></a>
+    <a class="q" href="#parceiros"><h3>Empresas e parcerias</h3><p>adm@wisemadness.com.br</p></a>
+    <a class="q" href="#participe"><h3>Voluntariado</h3><p>Formulário de inscrição</p></a>
+    <a class="q" href="#ouvidoria"><h3>Ouvidoria</h3><p>Inclusive anônima</p></a>
+  </div>
+  <h2 class="h">Unidades</h2>
+  <div class="units">${L.unidades.map(u => `<div class="unit"><span class="rn">${esc(u.codigo)}</span><h3>${esc(u.nome)}</h3><p>${esc(u.tipo)}</p><p><b>${esc(u.tel)}</b></p><p>${esc(u.email)}</p><p>${u.protegido || !u.end ? 'Endereço protegido' : esc(u.end)}</p><p class="muted">${esc(u.hor)}</p></div>`).join('')}</div>
+</div></section>`;
+
+P.perguntas = () => `
+${phead('<a href="#quem-somos">Quem somos</a>', 'Perguntas frequentes', '')}
+<section class="block"><div class="wrap prose">
+${[['O que é a Wise Madness?', 'Uma associação sociocultural sem fins lucrativos de Bauru, criada em 2006, que atende crianças, adolescentes e jovens com arte, cultura, esporte, qualificação e acolhimento.'], ['O que é uma organização da sociedade civil?', 'É uma entidade privada sem fins lucrativos que atua em causas de interesse público. Quando recebe recursos públicos, segue a Lei 13.019/2014 e presta contas de cada parceria.'], ['Como posso ajudar?', 'Doando uma vez ou todo mês, sendo voluntário ou trazendo sua empresa como parceira.'], ['Como me inscrevo como voluntário?', 'Pelo formulário da página Participe. A equipe responde por e-mail com as oportunidades abertas.'], ['As atividades são pagas?', 'Não. Todos os serviços e projetos da Wise são gratuitos para as crianças, adolescentes e famílias.']].map(([q, a]) => `<details class="faq"><summary>${q}</summary><p>${a}</p></details>`).join('')}
+</div></section>`;
+
+P.termos = () => `${phead('', 'Termos de uso', '')}<section class="block"><div class="wrap prose"><p>Ao acessar este site, você concorda com estes termos e com as leis aplicáveis. Os materiais publicados são protegidos por direitos autorais e podem ser baixados para consulta pessoal e não comercial.</p><p>Os documentos da área de Transparência são públicos e podem ser usados para fiscalização e controle social.</p><p>Dúvidas: adm@wisemadness.com.br.</p></div></section>`;
+P.privacidade = () => `${phead('', 'Política de privacidade', '')}<section class="block"><div class="wrap prose"><p>A Wise coleta dados pessoais apenas quando você preenche um formulário (voluntariado, ouvidoria, doação) e só para responder ao seu pedido, de acordo com a Lei Geral de Proteção de Dados (LGPD).</p><p>Não divulgamos dados de crianças e adolescentes atendidos, nem endereços das casas de acolhimento. Não compartilhamos seus dados com terceiros, exceto quando a lei exigir.</p><p>Para consultar, corrigir ou apagar seus dados, escreva para adm@wisemadness.com.br.</p></div></section>`;
+
+// ---------- roteador ----------
+function route(keep) {
+  let h = (location.hash || '#inicio').slice(1) || 'inicio';
+  if (/(^|&)(access_token|error_description|error)=/.test(h)) h = 'adm'; // retorno de link de login/recuperação de senha
+  let html, after, sec = h;
+  const proj = PROJETOS.find(p => p.slug === h), svc = SERVICOS.find(s => s.slug === h), acc = ACONTECE.find(a => a.slug === h);
+  if (h === 'adm' || h.startsWith('adm-')) { html = ADM.render(h); after = ADM.after; sec = ''; }
+  else if (P[h]) { html = P[h](); after = P[h].after; }
+  else if (proj) { html = itemPage(proj, false); sec = 'o-que-fazemos'; }
+  else if (svc) { html = itemPage(svc, true); sec = 'o-que-fazemos'; }
+  else if (acc) { html = accPage(acc); sec = 'acontece'; }
+  else if (h.startsWith('parceria-') && L.parcerias.find(p => p.id === h.slice(9))) { html = parceriaPage(L.parcerias.find(p => p.id === h.slice(9))); sec = 'transparencia'; }
+  else { html = P.inicio(); after = P.inicio.after; }
+  if (h.startsWith('transparencia') || h === 'ouvidoria') sec = 'transparencia';
+  if (h === 'parceiros' || h === 'perguntas') sec = 'quem-somos';
+  if (h === 'contato') sec = 'participe';
+  document.body.classList.toggle('is-adm', h === 'adm' || h.startsWith('adm-'));
+  const y = window.scrollY;
+  main.innerHTML = html;
+  if (after) after(h);
+  document.querySelectorAll('nav.main a').forEach(a => a.dataset.sec === sec ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+  if (keep) { window.scrollTo(0, y); return; }
+  document.body.classList.remove('nav-open'); $('#menuBtn').setAttribute('aria-expanded', 'false'); $('#menuBtn').textContent = 'Menu';
+  window.scrollTo(0, 0);
+  if (h !== 'inicio' && location.hash) main.focus({ preventScroll: true });
+  const t = main.querySelector('h1'); document.title = (t && h !== 'inicio' ? t.textContent + ' · ' : '') + 'Wise Madness';
+}
+window.addEventListener('hashchange', () => { if (ADM.guardLeave()) route(); });
+onData(() => { if (!ADM.isEditing() && location.hash !== '#ouvidoria') route(true); }); // ouvidoria não depende dos dados: não apaga o que a pessoa digitou
+route();
+</script>
+</body>
+</html>
