@@ -45,6 +45,15 @@ Sem o `config.js` preenchido, o site público funciona com os dados de `data.js`
 
 7. **Project Settings → API**: copie a *Project URL* e a chave *anon public* para `config.js`. Nunca use a chave `service_role` no site.
 
+## Manter o Supabase ativo (plano gratuito)
+
+O Supabase pausa projetos gratuitos após ~7 dias sem uso. O workflow `.github/workflows/supabase-keepalive.yml` faz uma leitura simples no banco a cada 3 dias pelo GitHub Actions.
+
+1. No GitHub: **Settings → Secrets and variables → Actions → New repository secret**, crie `SUPABASE_URL` e `SUPABASE_ANON_KEY` (a chave *anon public*, nunca a `service_role`).
+2. Na aba **Actions**, abra **Supabase keepalive** e clique em **Run workflow** para testar.
+
+Se a rotina falhar, o GitHub envia e-mail para quem tem acesso ao repositório.
+
 ## Segurança
 
 Quem decide o que cada pessoa pode fazer é o banco (Row Level Security em `schema.sql`), não o JavaScript. Mesmo que alguém altere o código no navegador:
