@@ -156,18 +156,29 @@ section.block.tight{padding:64px 0}
 @media (max-width:860px){.split{grid-template-columns:1fr}.panel{padding:28px}}
 
 /* rodapé */
-footer.site{background:var(--ink);color:#C9CED4;padding:64px 0 32px;font-size:.95rem}
-footer.site .cols{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:32px}
-footer.site h4{color:#fff;font:600 1rem var(--body);margin:0 0 12px}
+footer.site{background:var(--ink);color:#C9CED4;padding:88px 0 36px;font-size:.97rem;line-height:1.65}
+footer.site .cols{display:grid;grid-template-columns:1.7fr 1fr 1.1fr 1.3fr;gap:64px}
+footer.site h4{color:#fff;font:600 1.05rem var(--body);margin:0 0 22px;letter-spacing:.01em}
 footer.site ul{list-style:none;margin:0;padding:0}
-footer.site li{margin:6px 0}
+footer.site li{margin:0 0 12px}
+footer.site p{margin:0 0 16px}
+footer.site .cols>div:first-child p{max-width:36ch}
 footer.site a{text-decoration:none}
 footer.site a:hover{color:#fff;text-decoration:underline}
-footer.site .badge{display:inline-block;background:#fff;border-radius:10px;padding:10px 14px;margin-bottom:18px}
-footer.site .badge img{height:34px}
-footer.site .legal{border-top:1px solid rgba(255,255,255,.14);margin-top:44px;padding-top:22px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.86rem}
-@media (max-width:860px){footer.site .cols{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){footer.site .cols{grid-template-columns:1fr}}
+footer.site .badge{display:inline-block;background:#fff;border-radius:10px;padding:10px 14px;margin-bottom:28px}
+footer.site .badge img{height:38px}
+footer.site .faixa{display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;margin-top:72px;padding:40px 0;border-top:1px solid rgba(255,255,255,.14)}
+footer.site .selos{display:flex;gap:24px;align-items:center}
+footer.site .selos img{width:120px;height:auto;display:block}
+footer.site .ods{display:flex;gap:12px;align-items:center}
+footer.site .ods img{width:56px;height:56px;display:block;border-radius:3px}
+footer.site .redes{display:flex;gap:10px;margin-top:26px}
+footer.site .redes a{display:inline-flex;color:#fff;padding:9px;border-radius:10px;background:rgba(255,255,255,.08);transition:background .15s}
+footer.site .redes a:hover{background:var(--red);text-decoration:none}
+footer.site .redes svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+footer.site .legal{border-top:1px solid rgba(255,255,255,.14);padding-top:28px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:.88rem}
+@media (max-width:1000px){footer.site .cols{grid-template-columns:1fr 1fr;gap:48px 40px}}
+@media (max-width:640px){footer.site{padding:64px 0 28px}footer.site .cols{grid-template-columns:1fr;gap:40px}footer.site .faixa{flex-direction:column;align-items:flex-start;margin-top:48px}footer.site .selos{flex-wrap:wrap}}
 
 /* cabeçalho de página interna */
 .phead{background:var(--soft);padding:64px 0 48px;border-bottom:1px solid var(--line)}
@@ -375,7 +386,19 @@ details.faq p{margin:0 0 18px;color:var(--ink-2);max-width:68ch}
         <li><a href="#transparencia-parcerias">Parcerias com o poder público</a></li><li><a href="#transparencia-financas">Balanços e auditoria</a></li><li><a href="#transparencia-documentos">Documentos e certidões</a></li><li><a href="#ouvidoria">Ouvidoria</a></li></ul></div>
       <div><h4>Contato</h4><ul>
         <li>(14) 3208-7400</li><li>adm@wisemadness.com.br</li><li>Segunda a sexta, 7h30 às 16h30</li><li><a href="#contato">Todas as unidades</a></li></ul>
-        <ul style="margin-top:14px" id="redes"></ul></div>
+        <div class="redes" id="redes"></div></div>
+    </div>
+    <div class="faixa">
+    <div class="selos" aria-label="Selos de transparência">
+      <img src="img/selos/transparencia-online-brasil.png" alt="Selo Transparência Online, Impactodo: pontos no Brasil, 60% em progresso" width="136" height="135" loading="lazy">
+      <img src="img/selos/online-transparency-global.png" alt="Selo Online Transparency, Impactodo: global points, 64% em progresso" width="136" height="135" loading="lazy">
+    </div>
+    <div class="ods" aria-label="Objetivos de Desenvolvimento Sustentável">
+      <img src="img/selos/ods-01.png" alt="ODS 1: Erradicação da pobreza" width="51" height="51" loading="lazy">
+      <img src="img/selos/ods-02.png" alt="ODS 2: Fome zero e agricultura sustentável" width="51" height="51" loading="lazy">
+      <img src="img/selos/ods-03.png" alt="ODS 3: Saúde e bem-estar" width="51" height="51" loading="lazy">
+      <img src="img/selos/ods-10.png" alt="ODS 10: Redução das desigualdades" width="51" height="51" loading="lazy">
+    </div>
     </div>
     <div class="legal"><span>© 2026 Associação Wise Madness</span><span><a href="#termos">Termos de uso</a> · <a href="#privacidade">Privacidade</a> · <a href="#ouvidoria">Ouvidoria</a> · <a href="#adm">Área administrativa</a></span></div>
   </div>
@@ -397,7 +420,15 @@ const liberado = p => p.repasses.reduce((s, r) => s + (Number(r.valor) || 0), 0)
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const pdf = (f, label = 'Abrir PDF') => f ? `<a class="pdf" href="${esc(fileUrl(f))}" target="_blank" rel="noopener">${label}</a>` : '<span class="pill warn">Sem arquivo</span>';
 
-$('#redes').innerHTML = ORG.redes.map(([n, u]) => `<li><a href="${u}" target="_blank" rel="noopener">${n}</a></li>`).join('');
+const ICONES_REDES = {
+  facebook: '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>',
+  instagram: '<rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>',
+  linkedin: '<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>',
+  youtube: '<path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><polygon points="10 15 15 12 10 9"/>',
+};
+const ORDEM_REDES = ['Facebook', 'Instagram', 'LinkedIn', 'YouTube'];
+$('#redes').innerHTML = [...ORG.redes].sort((a, b) => ORDEM_REDES.indexOf(a[0]) - ORDEM_REDES.indexOf(b[0]))
+  .map(([n, u]) => `<a href="${u}" target="_blank" rel="noopener" aria-label="${n}" title="${n}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONES_REDES[n.toLowerCase()] || ''}</svg></a>`).join('');
 
 function modal(t, x) { $('#mTitle').textContent = t; $('#mText').textContent = x; $('#modal').classList.add('show'); $('#mClose').focus(); }
 $('#mClose').onclick = () => $('#modal').classList.remove('show');
@@ -783,7 +814,7 @@ P.doe = () => `
     <div class="amounts" role="group" aria-label="Valor">${[30, 50, 100, 200, 500].map(v => `<button type="button" data-v="${v}" aria-pressed="${v === 50}">R$ ${v}</button>`).join('')}<button type="button" data-v="outro" aria-pressed="false">Outro</button></div>
     <div class="other" id="other"><label class="small muted" for="otherV">Valor em reais</label><input id="otherV" type="number" min="5" step="1" inputmode="numeric" placeholder="Ex.: 75"></div>
     <button class="btn btn-red" style="width:100%;font-size:1.1rem" type="button" id="giveBtn">Doar R$ 50 por mês</button>
-    <p class="small muted" style="margin:14px 0 0">Pagamento seguro por cartão ou PIX, processado pela Impactodo.</p>
+    <p class="small muted" style="margin:14px 0 0">Pagamento seguro por PIX, cartão ou boleto, processado pelo Asaas. Você será levado à página de pagamento e a doação vai direto para a conta da Associação Wise Madness.</p>
   </div>
 </div></div>
 <section class="block"><div class="wrap cols2">
@@ -802,7 +833,34 @@ P.doe.after = () => {
   document.querySelectorAll('#gbox .seg button').forEach(b => b.onclick = () => { fr = b.dataset.fr; document.querySelectorAll('#gbox .seg button').forEach(x => x.setAttribute('aria-pressed', x === b)); lbl(); });
   document.querySelectorAll('.amounts button').forEach(b => b.onclick = () => { v = b.dataset.v === 'outro' ? 'outro' : Number(b.dataset.v); document.querySelectorAll('.amounts button').forEach(x => x.setAttribute('aria-pressed', x === b)); $('#other').classList.toggle('show', v === 'outro'); if (v === 'outro') $('#otherV').focus(); lbl(); });
   $('#otherV').oninput = lbl;
-  $('#giveBtn').onclick = () => modal('Próximo passo: pagamento', 'No site publicado, este botão abre o pagamento seguro da Impactodo com o valor e a frequência escolhidos. Neste protótipo, nenhuma cobrança é feita.');
+  $('#giveBtn').onclick = async () => {
+    const val = v === 'outro' ? Number($('#otherV').value || 0) : v;
+    if (!val || val < 5) return modal('Valor da doação', 'Informe um valor de pelo menos R$ 5.');
+    const btn = $('#giveBtn'), txt = btn.textContent;
+    const cfg = window.WISE_CONFIG || {};
+    const volta = () => { btn.disabled = false; btn.textContent = txt; };
+    btn.disabled = true; btn.textContent = 'Abrindo pagamento seguro...';
+    try {
+      let url = '';
+      if (cfg.SUPABASE_URL) {
+        const r = await fetch(`${cfg.SUPABASE_URL}/functions/v1/asaas-checkout`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', apikey: cfg.SUPABASE_ANON_KEY || '', Authorization: `Bearer ${cfg.SUPABASE_ANON_KEY || ''}` },
+          body: JSON.stringify({ valor: val, frequencia: fr === 'mensal' ? 'mensal' : 'unica' }),
+        });
+        const d = await r.json().catch(() => ({}));
+        if (!r.ok || !d.url) throw new Error(d.error || 'Falha ao iniciar o pagamento.');
+        url = d.url;
+      } else {
+        url = (cfg.ASAAS_LINKS || {})[fr === 'mensal' ? 'mensal' : 'unica'] || '';
+      }
+      if (!url) { volta(); return modal('Doações em configuração', 'O pagamento online ainda não foi ativado neste site. Enquanto isso, doe por PIX com os dados desta página ou ligue para (14) 3208-7400.'); }
+      window.location.href = url;
+    } catch (e) {
+      volta();
+      modal('Não foi possível doar agora', (e && e.message) || 'Tente novamente em instantes ou doe por PIX.');
+    }
+  };
   $('#cpCnpj').onclick = async () => { try { await navigator.clipboard.writeText('13.890.668/0001-01'); $('#cpCnpj').textContent = 'CNPJ copiado'; } catch (e) { $('#cpCnpj').textContent = '13.890.668/0001-01'; } };
 };
 

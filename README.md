@@ -45,6 +45,28 @@ Sem o `config.js` preenchido, o site público funciona com os dados de `data.js`
 
 7. **Project Settings → API**: copie a *Project URL* e a chave *anon public* para `config.js`. Nunca use a chave `service_role` no site.
 
+## Receber doações com o Asaas
+
+A página `#doe` leva o doador para a página de pagamento do Asaas (PIX, cartão ou boleto). O dinheiro cai direto na conta Asaas da Associação. O site nunca guarda dados de cartão.
+
+**Opção A (recomendada): link gerado com o valor escolhido.** A chave de API do Asaas é secreta, por isso quem fala com o Asaas é uma Edge Function do Supabase (`supabase/functions/asaas-checkout`):
+
+1. No Asaas: **Integrações → Chaves de API → Gerar chave** (conta de produção). Para testar antes, crie uma conta no [sandbox](https://sandbox.asaas.com) e use `ASAAS_ENV=sandbox`.
+2. Instale a [Supabase CLI](https://supabase.com/docs/guides/cli), entre no projeto (`supabase link --project-ref SEU_REF`) e rode:
+
+   ```bash
+   supabase secrets set ASAAS_API_KEY='$aact_...' ASAAS_ENV=production ALLOWED_ORIGIN=https://wisemadness.org.br
+   supabase functions deploy asaas-checkout --no-verify-jwt
+   ```
+
+3. Preencha `SUPABASE_URL` e `SUPABASE_ANON_KEY` em `config.js` (o site já chama a função sozinho).
+
+A função aceita valores de R$ 5 a R$ 50.000. "Uma vez" cria cobrança avulsa; "Todo mês" cria assinatura mensal.
+
+**Opção B (sem Supabase): links fixos.** No Asaas, em **Cobranças → Links de pagamento**, crie um link avulso e um de assinatura mensal com o valor em branco e cole os endereços em `ASAAS_LINKS` no `config.js`. Nesse modo o valor escolhido no site não é repassado; quem doa digita o valor na página do Asaas.
+
+Sem nenhuma das duas opções, o botão "Doar" avisa que o pagamento ainda não foi ativado.
+
 ## Manter o Supabase ativo (plano gratuito)
 
 O Supabase pausa projetos gratuitos após ~7 dias sem uso. O workflow `.github/workflows/supabase-keepalive.yml` faz uma leitura simples no banco a cada 3 dias pelo GitHub Actions.
