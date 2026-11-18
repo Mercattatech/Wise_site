@@ -1,32 +1,44 @@
 # Mantém o projeto Supabase (plano gratuito) ativo.
 # O Supabase pausa projetos gratuitos após ~7 dias sem atividade.
-# Este workflow faz uma leitura simples (só leitura, chave anon) a cada 3 dias.
+# Este workflow faz uma leitura simples (só leitura, chave anon) todos os dias.
 #
-# Configurar uma vez no GitHub: Settings → Secrets and variables → Actions → New repository secret
-#   SUPABASE_URL       ex.: https://abcdefghijkl.supabase.co
-#   SUPABASE_ANON_KEY  a chave "anon public" (NUNCA a service_role)
+# Nenhuma configuração extra: ele lê SUPABASE_URL e SUPABASE_ANON_KEY do config.js do repositório
+# (são valores públicos, os mesmos que o navegador já usa).
+# Opcional: se existirem os secrets SUPABASE_URL e SUPABASE_ANON_KEY no GitHub
+#   (Settings → Secrets and variables → Actions), eles têm prioridade.
 
 name: Supabase keepalive
 
 on:
   schedule:
-    - cron: '17 12 */3 * *' # a cada 3 dias, 09:17 (horário de Brasília)
+    - cron: '17 12 * * *'   # todos os dias, 09:17 (horário de Brasília)
   workflow_dispatch: {}     # permite rodar manualmente pela aba Actions
 
 permissions:
+  contents: read
   actions: write # necessário para o passo que evita o GitHub desativar o agendamento
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - name: Consulta leve ao banco
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         run: |
+          # Sem secrets, usa os valores públicos do config.js
+          if [ -z "$SUPABASE_URL" ]; then
+            SUPABASE_URL=$(sed -n "s/.*SUPABASE_URL: *'\([^']*\)'.*/\1/p" config.js | head -n1)
+          fi
+          if [ -z "$SUPABASE_ANON_KEY" ]; then
+            SUPABASE_ANON_KEY=$(sed -n "s/.*SUPABASE_ANON_KEY: *'\([^']*\)'.*/\1/p" config.js | head -n1)
+          fi
+          SUPABASE_URL="${SUPABASE_URL%/}"
           if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
-            echo "::error::Defina os secrets SUPABASE_URL e SUPABASE_ANON_KEY no repositório."
+            echo "::error::Preencha SUPABASE_URL e SUPABASE_ANON_KEY no config.js (ou crie os secrets no GitHub)."
             exit 1
           fi
           for tentativa in 1 2 3; do
@@ -41,6 +53,8 @@ jobs:
             fi
             sleep 20
           done
+          # Também tenta o endpoint de saúde da autenticação (conta como atividade)
+          curl -s -o /dev/null -w "Auth health: HTTP %{http_code}\n" "$SUPABASE_URL/auth/v1/health" -H "apikey: $SUPABASE_ANON_KEY" || true
           cat /tmp/resp.json
           echo "::error::Supabase não respondeu (HTTP $status). Verifique se o projeto foi pausado no painel."
           exit 1

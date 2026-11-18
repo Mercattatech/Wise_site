@@ -69,12 +69,12 @@ Sem nenhuma das duas opções, o botão "Doar" avisa que o pagamento ainda não 
 
 ## Manter o Supabase ativo (plano gratuito)
 
-O Supabase pausa projetos gratuitos após ~7 dias sem uso. O workflow `.github/workflows/supabase-keepalive.yml` faz uma leitura simples no banco a cada 3 dias pelo GitHub Actions.
+O Supabase pausa projetos gratuitos após ~7 dias sem uso. Há duas proteções:
 
-1. No GitHub: **Settings → Secrets and variables → Actions → New repository secret**, crie `SUPABASE_URL` e `SUPABASE_ANON_KEY` (a chave *anon public*, nunca a `service_role`).
-2. Na aba **Actions**, abra **Supabase keepalive** e clique em **Run workflow** para testar.
+1. **Visitas ao site:** toda vez que alguém abre o site, ele lê a Transparência no banco (isso já conta como atividade).
+2. **Rotina diária no GitHub** (`.github/workflows/supabase-keepalive.yml`): todo dia às 09:17 (Brasília) faz uma leitura leve no banco, mesmo que ninguém visite o site. Não precisa configurar nada além do `config.js`: a rotina lê `SUPABASE_URL` e `SUPABASE_ANON_KEY` de lá (valores públicos). Se preferir, crie secrets com esses nomes em **Settings → Secrets and variables → Actions**; eles têm prioridade.
 
-Se a rotina falhar, o GitHub envia e-mail para quem tem acesso ao repositório.
+Para testar: aba **Actions → Supabase keepalive → Run workflow**. Se a rotina falhar (por exemplo, projeto já pausado), o GitHub envia e-mail para quem tem acesso ao repositório. Um projeto pausado precisa ser reativado manualmente no painel do Supabase (botão *Restore project*, possível por até 90 dias).
 
 ## Segurança
 
