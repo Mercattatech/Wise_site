@@ -22,9 +22,9 @@ const ORG = {
 };
 
 const STATS = [
-  { n: '638', t: 'crianças e adolescentes por dia no Serviço de Convivência' },
+  { n: '565', t: 'crianças e adolescentes por dia no Serviço de Convivência' },
   { n: '40', t: 'crianças e adolescentes acolhidos nas casas Wise' },
-  { n: '622 mil', t: 'refeições servidas em 2024' },
+  { n: '622.200', t: 'refeições servidas em 2025' },
   { n: '7', t: 'unidades de atendimento em Bauru' },
 ];
 
@@ -41,7 +41,7 @@ const TIMELINE = [
 ];
 
 const UNIDADES = [
-  { id: 'I', nome: 'Wise Galpão', tipo: 'Serviço de Convivência (0 a 15 anos)', end: 'Rua Braz Lemos de Almeida, 2-45 · Vila Aviação B · 17047-630', tel: '(14) 99822-8920', email: 'wisegalpao@wisemadness.com.br', hor: '7h30 às 16h30' },
+  { id: 'I', nome: 'Wise Galpão', tipo: 'Projetos Wise Way e Skate', end: 'Rua Braz Lemos de Almeida, 2-45 · Vila Aviação B · 17047-630', tel: '(14) 99822-8920', email: 'wisegalpao@wisemadness.com.br', hor: '7h30 às 16h30' },
   { id: 'II', nome: 'Wise Rasi', tipo: 'Serviço de Convivência (6 a 15 anos)', end: 'Rua Augusto Moreno Munhoz, s/n · Octávio Rasi · 17039-210', tel: '(14) 99885-4718', email: 'wiserasi@wisemadness.com.br', hor: '7h30 às 16h30' },
   { id: 'III', nome: 'Wise Hope', tipo: 'Acolhimento institucional', end: null, tel: '(14) 3243-2715', email: 'wisehope@wisemadness.com.br', hor: '8h às 17h' },
   { id: 'IV', nome: 'Wise Brac', tipo: 'Serviço de Convivência (6 a 15 anos)', end: 'Rua Antônia Fabiano, 4-65 · Parque Jaraguá · 17067-670', tel: '(14) 99843-4540', email: 'wisebrac@wisemadness.com.br', hor: '7h30 às 16h30' },
@@ -53,8 +53,8 @@ const UNIDADES = [
 const SERVICOS = [
   {
     slug: 'servico-scfv', img: 'img/sobre.jpg', titulo: 'Serviço de Convivência e Fortalecimento de Vínculos', curto: 'Convivência (SCFV)',
-    resumo: '638 crianças e adolescentes de 6 a 15 anos, todos os dias, no contraturno escolar.',
-    publico: '6 a 15 anos', onde: 'Unidades I, II, IV e V', quando: 'Segunda a sexta, no contraturno escolar',
+    resumo: '565 crianças e adolescentes de 6 a 15 anos, todos os dias, no contraturno escolar.',
+    publico: '6 a 15 anos', onde: 'Unidades II, IV e V', quando: 'Segunda a sexta, no contraturno escolar',
     texto: [
       'O Serviço de Convivência e Fortalecimento de Vínculos é realizado por meio de termos de colaboração com a Secretaria Municipal de Assistência Social (SMAS) e a Prefeitura de Bauru, dentro da rede de assistência social.',
       'Em grupos organizados por idade, as crianças e adolescentes participam de atividades artísticas, culturais, esportivas e de lazer. O objetivo é fortalecer as relações familiares e comunitárias, ampliar as redes de apoio e proteção e prevenir situações de violação de direitos.',
